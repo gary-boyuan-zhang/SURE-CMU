@@ -181,10 +181,59 @@ ongoal_dens + ongoal_ecdf
 
 plot_grid(goal_dens, goal_ecdf, 
           shot_dens, shot_ecdf,
-          ongoal_dens, shot_ecdf,
           ncol = 2)
 
 
+# team level summary ------------------------------------------------------
+
+
+  # team level summary
+  
+team_summary <- playoff_shot_data %>%
+    filter(time < 3600) %>%
+    group_by(isHomeTeam) %>%
+    summarise(goal = sum(event == 'GOAL'),
+              shot = n()) %>%
+    mutate(isHomeTeam = as.character(isHomeTeam))
+
+  # side by side bar
+
+team_summary_goal_bar <- team_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  theme_bw()
+
+team_summary_shot_bar <- team_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  theme_bw()
+
+team_summary_shot_bar + team_summary_goal_bar
+
+  # side by side pie
+
+team_summary_goal_pie <- team_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  coord_polar('y') +
+  theme_bw()
+
+team_summary_shot_pie <- team_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  coord_polar('y') +
+  theme_bw()
+
+team_summary_shot_pie + team_summary_goal_pie
+
+
+plot_grid(team_summary_shot_bar, team_summary_goal_bar,
+          team_summary_shot_pie, team_summary_goal_pie,
+          ncol = 2)
 
 # overtime ----------------------------------------------------------------
 
@@ -230,4 +279,53 @@ overtime_dens <- playoff_shot_data %>%
 
 # put together
 overtime_dens + overtime_ecdf
+
+
+
+# overtime shot & goal ----------------------------------------------------
+
+overtime_summary <- playoff_shot_data %>%
+  filter(time > 3600) %>%
+  group_by(isHomeTeam) %>%
+  summarise(goal = sum(event == 'GOAL'),
+            shot = n()) %>%
+  mutate(isHomeTeam = as.character(isHomeTeam))
+
+  # bar
+
+overtime_summary_goal_bar <- overtime_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  theme_bw()
+
+overtime_summary_shot_bar <- overtime_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  theme_bw()
+
+overtime_summary_shot_bar + overtime_summary_goal_bar
+
+  # pie
+
+overtime_summary_goal_pie <- overtime_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  coord_polar('y') +
+  theme_bw()
+
+overtime_summary_shot_pie <- overtime_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  coord_polar('y') +
+  theme_bw()
+
+overtime_summary_shot_pie + overtime_summary_goal_pie
+
+plot_grid(overtime_summary_shot_bar, overtime_summary_goal_bar,
+          overtime_summary_shot_pie, overtime_summary_goal_pie,
+          ncol = 2)
 

@@ -124,6 +124,7 @@ team_shot_dist_table %>%
                       high = 'darkblue')
 
     ## order dist table with serialization
+library(seriation)
 
 order <- team_shot_dist %>%
   seriate() %>%
@@ -181,7 +182,7 @@ team_shot_clustered <- team_data %>%
              #size = abs(shot_pg - shot_con_pg)
              )) +
   geom_point() + 
-  geom_text(hjust = 0.8, vjust = 1.2) +
+  geom_text(hjust = 0.5, vjust = 1.2) +
   geom_abline(slope = 1, intercept = 0) +
   scale_color_colorblind() +
   theme_bw() +

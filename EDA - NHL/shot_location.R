@@ -34,10 +34,11 @@ playoff_shot_data %>%
 
 # add hockey background
 
+library(sportyR)
 geom_hockey(league = 'NHL') +
   geom_point(data = playoff_shot_data,
              aes(x = arenaAdjustedXCord, y = arenaAdjustedYCord),
-             alpha = 0.3) +
+             alpha = 0.1) +
   geom_density2d(adjust = 1) +
   theme_bw() +
   coord_fixed() 
@@ -51,6 +52,23 @@ geom_hockey(league = 'NHL', full_surf = FALSE) +
   geom_density2d(adjust = 1) +
   theme_bw() +
   coord_fixed() 
+
+# full court heat map with hockey background
+
+geom_hockey(league = 'NHL') +
+  stat_density2d(data = playoff_shot_data,
+                 adjust = 0.8,
+                 #h = 1.2, bins = 40,
+                 alpha = 0.3,
+                 aes(x = arenaAdjustedXCord, y = arenaAdjustedYCord, 
+                     fill = after_stat(level)),
+                 geom = "polygon") +
+  scale_fill_gradient(low = "darkblue",
+                      high = "darkorange") +
+  theme_bw() +
+  coord_fixed() +
+  theme(legend.position = 'bottom',
+        legend.text = element_blank())
 
 
 # shot location by left&right ---------------------------------------------
@@ -76,7 +94,7 @@ geom_hockey(league = 'NHL', full_surf = FALSE) +
         legend.text = element_blank(),
         plot.title = element_text(hjust = 0.5))
 
-# relative x
+# relative l
 
 relative_l <- geom_hockey(league = 'NHL', full_surf = FALSE) +
   stat_density2d(data = filter(playoff_shot_data, shooterLeftRight == 'L'),
@@ -90,9 +108,12 @@ relative_l <- geom_hockey(league = 'NHL', full_surf = FALSE) +
                       high = "darkorange") +
   theme_bw() +
   coord_fixed() +
-  theme(legend.position = 'bottom')
+  labs(title = 'Left') +
+  theme(legend.position = 'none',
+        plot.caption = element_blank(),
+        plot.title = element_text(hjust = 0.5))
 
-# relative y
+# relative r
 relative_r <- geom_hockey(league = 'NHL', full_surf = FALSE) +
   stat_density2d(data = filter(playoff_shot_data, shooterLeftRight == 'R'),
                  adjust = 0.8,
@@ -105,7 +126,12 @@ relative_r <- geom_hockey(league = 'NHL', full_surf = FALSE) +
                       high = "darkorange") +
   theme_bw() +
   coord_fixed()+
-  theme(legend.position = 'bottom')
+  labs(title = 'Right') +
+  theme(legend.position = 'none',
+        plot.caption = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+plot_grid(relative_l, relative_r)
 
 relative_l + relative_r
 

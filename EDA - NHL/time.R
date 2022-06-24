@@ -1,7 +1,15 @@
 
-# load data ---------------------------------------------------------------
+
+# load package ------------------------------------------------------------
 
 library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(cowplot)
+
+
+# load data ---------------------------------------------------------------
 
 playoff_shot_data <- read_csv("nhl_playoffs_shots_2022.csv")
 
@@ -36,8 +44,9 @@ playoff_shot_data %>%
 playoff_shot_data %>%
   filter(time < 3600) %>%
   ggplot(aes(x = time, color = event)) +
-  stat_ecdf() +
+  stat_ecdf(size = 0.65) +
   theme_bw() +
+  scale_color_colorblind() +
   theme(legend.position = 'bottom')
 
 # kde
@@ -45,9 +54,10 @@ playoff_shot_data %>%
 playoff_shot_data %>%
   filter(time < 3600) %>%
   ggplot(aes(x = time, color = event)) +
-  geom_density() +
-  geom_rug(alpha = 0.5) +
+  geom_density(size = 1) +
+  geom_rug(alpha = 0.05) +
   theme_bw() +
+  scale_color_colorblind() +
   theme(legend.position = 'bottom')
 
 playoff_shot_data %>%
@@ -144,7 +154,9 @@ shot_ecdf <- playoff_shot_data %>%
 
 shot_dens + shot_ecdf
 
-
+plot_grid(goal_dens, goal_ecdf, 
+          shot_dens, shot_ecdf,
+          ncol = 2)
 
 # ongoal's ecdf&kde together w/ home & away
 
@@ -202,6 +214,7 @@ team_summary_goal_bar <- team_summary %>%
   ggplot(aes(x = isHomeTeam)) +
   geom_bar(aes(y = goal),
            stat = 'identity') +
+  scale_color_colorblind() +
   theme_bw()
 
 team_summary_shot_bar <- team_summary %>%
@@ -219,7 +232,10 @@ team_summary_goal_pie <- team_summary %>%
   geom_bar(aes(y = goal),
            stat = 'identity') +
   coord_polar('y') +
-  theme_bw()
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.title.y = element_blank())
 
 team_summary_shot_pie <- team_summary %>%
   ggplot(aes(x = '', fill = isHomeTeam)) +
@@ -228,7 +244,7 @@ team_summary_shot_pie <- team_summary %>%
   coord_polar('y') +
   theme_bw()
 
-team_summary_shot_pie + team_summary_goal_pie
+team_summary_shot_pie + team_summary_goal_pie + plot_layout(guides = 'collect')
 
 
 plot_grid(team_summary_shot_bar, team_summary_goal_bar,

@@ -1,8 +1,15 @@
 
 
-# load data ---------------------------------------------------------------
+# load package ------------------------------------------------------------
 
 library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+
+
+# load data ---------------------------------------------------------------
+
 
 playoff_shot_data <- read_csv("nhl_playoffs_shots_2022.csv")
 

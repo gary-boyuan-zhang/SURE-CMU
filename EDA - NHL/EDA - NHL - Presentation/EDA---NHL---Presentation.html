@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Exploratory Data Analysis Project</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Boyuan(Gary) Zhang" />
+    <meta name="author" content="bz2058@nyu.edu" />
+    <meta name="date" content="2022-06-24" />
+    <script src="EDA---NHL---Presentation_files/header-attrs/header-attrs.js"></script>
+    <link href="EDA---NHL---Presentation_files/remark-css/default.css" rel="stylesheet" />
+    <link href="EDA---NHL---Presentation_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="nyu-metro.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# <strong>Exploratory Data Analysis Project</strong>
+]
+.subtitle[
+## <strong>NHL Data</strong>
+]
+.author[
+### <strong>Boyuan(Gary) Zhang</strong>
+]
+.author[
+### <em><a href="mailto:bz2058@nyu.edu" class="email">bz2058@nyu.edu</a></em>
+]
+.institute[
+### Summer Undergraduate Research Experience
+]
+.institute[
+### Department of Statistics &amp; Data Science
+]
+.institute[
+### Carnegie Mellon University
+]
+.date[
+### June 24, 2022
+]
+
+---
+
+
+
+
+
+
+# Data
+
+
+
+## NHL Shot Data
+
+
+
+- Contains all shot attempts from the 2022 NHL playoffs (through June 10th), courtesy of [`MoneyPuck.com`](http://www.stat.cmu.edu/cmsac/sure/2022/materials/data/sports/eda_projects/nhl_playoffs_shots_2022.csv)
+
+- There are 7721 observations and 34 variables
+
+- Player variables: shooterName, shooterLeftRight, teamCode 
+
+- Shot variables: event, arenaAdjustedShotDistance, arenaAdjustedCords, time
+
+<div id="hxjleqttst" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#hxjleqttst .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hxjleqttst .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hxjleqttst .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hxjleqttst .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hxjleqttst .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hxjleqttst .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hxjleqttst .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hxjleqttst .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxjleqttst .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxjleqttst .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hxjleqttst .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hxjleqttst .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hxjleqttst .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjleqttst .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hxjleqttst .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hxjleqttst .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjleqttst .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hxjleqttst .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjleqttst .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hxjleqttst .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjleqttst .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjleqttst .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjleqttst .gt_left {
+  text-align: left;
+}
+
+#hxjleqttst .gt_center {
+  text-align: center;
+}
+
+#hxjleqttst .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hxjleqttst .gt_font_normal {
+  font-weight: normal;
+}
+
+#hxjleqttst .gt_font_bold {
+  font-weight: bold;
+}
+
+#hxjleqttst .gt_font_italic {
+  font-style: italic;
+}
+
+#hxjleqttst .gt_super {
+  font-size: 65%;
+}
+
+#hxjleqttst .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#hxjleqttst .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#hxjleqttst .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hxjleqttst .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#hxjleqttst .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#hxjleqttst .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">LR</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">team</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">event</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">shotType</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">distance</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">X</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Y</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">time</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Jake DeBrusk</td>
+<td class="gt_row gt_left">L</td>
+<td class="gt_row gt_left">BOS</td>
+<td class="gt_row gt_left">SHOT</td>
+<td class="gt_row gt_left">WRIST</td>
+<td class="gt_row gt_right">21.000000</td>
+<td class="gt_row gt_right">79</td>
+<td class="gt_row gt_right">-19</td>
+<td class="gt_row gt_right">20</td></tr>
+    <tr><td class="gt_row gt_left">Jake DeBrusk</td>
+<td class="gt_row gt_left">L</td>
+<td class="gt_row gt_left">BOS</td>
+<td class="gt_row gt_left">SHOT</td>
+<td class="gt_row gt_left">WRIST</td>
+<td class="gt_row gt_right">21.000000</td>
+<td class="gt_row gt_right">76</td>
+<td class="gt_row gt_right">-16</td>
+<td class="gt_row gt_right">25</td></tr>
+    <tr><td class="gt_row gt_left">Andrei Svechnikov</td>
+<td class="gt_row gt_left">L</td>
+<td class="gt_row gt_left">CAR</td>
+<td class="gt_row gt_left">MISS</td>
+<td class="gt_row gt_left">WRIST</td>
+<td class="gt_row gt_right">29.000000</td>
+<td class="gt_row gt_right">-70</td>
+<td class="gt_row gt_right">-22</td>
+<td class="gt_row gt_right">64</td></tr>
+    <tr><td class="gt_row gt_left">Seth Jarvis</td>
+<td class="gt_row gt_left">R</td>
+<td class="gt_row gt_left">CAR</td>
+<td class="gt_row gt_left">MISS</td>
+<td class="gt_row gt_left">TIP</td>
+<td class="gt_row gt_right">18.000000</td>
+<td class="gt_row gt_right">-73</td>
+<td class="gt_row gt_right">-9</td>
+<td class="gt_row gt_right">73</td></tr>
+    <tr><td class="gt_row gt_left">Taylor Hall</td>
+<td class="gt_row gt_left">L</td>
+<td class="gt_row gt_left">BOS</td>
+<td class="gt_row gt_left">SHOT</td>
+<td class="gt_row gt_left">TIP</td>
+<td class="gt_row gt_right">9.848858</td>
+<td class="gt_row gt_right">80</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">184</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+
+.footnote[###### adjusted for arena recording bias - uses the same methodology as [`War On Ice`](http://blog.war-on-ice.com/index.html%3Fp=512.html) proposed by [`Schuckers and Curro`](https://www.statsportsconsulting.com/wp-content/uploads/Schuckers_Curro_MIT_Sloan_THoR.pdf)]
+
+---
+
+# Data
+
+## Limitations
+
+### Playoff only:
+  - Number of games played by teams/players varies (i.e. 8 teams only play with 1 opponent)
+  - Tend to bias and in favor towards the finalist teams
+  - Sample size is relatively small
+
+### Observed variables:
+  - Player position
+  - Player total time on ice
+
+---
+
+# Shot Location
+
+## Where are shots located on the court?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/shot_location_point-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Shot Location
+
+## Where are shots located on the court?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/shot_location_heatmap-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Shot Location
+
+## Are there any difference between Left and Right handed player?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/shot_location_LR-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Shot Location
+
+## Where are goals located on the court?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/score_location_point-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Time Distribution
+
+## When are shots and goals happened in regular time?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/regular_dens+regular_ecdf-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Time Distribution - Home &amp; Away
+
+### How does shots/goals from Home&amp;Away teams distributed over regular time?
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/team_comparison_regular-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Time Distribution - Home &amp; Away
+
+### How many shots/goals do Home &amp; Away teams made in regular time?
+
+
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/team_summary_bars-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Time Distribution - Home &amp; Away
+
+### How many shots/goals do Home &amp; Away teams made in extra time?
+
+
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/overtime_summary_bars-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Time Distribution - Home &amp; Away
+
+## Compare shots/goals of Home&amp;Away teams in regular/extra time
+
+.left-column[
+
+&lt;br /&gt;
+&lt;br /&gt;
+
+###   Regular Time
+
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+###   Extra Time
+
+]
+
+.right-column[
+&lt;img src="EDA---NHL---Presentation_files/figure-html/team-summary-comparison-time-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Teams Clustering
+
+## Team Data Aggregation 
+
+
+
+#### Head:
+
+<div id="pihxxqxlin" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#pihxxqxlin .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#pihxxqxlin .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#pihxxqxlin .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pihxxqxlin .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pihxxqxlin .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pihxxqxlin .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pihxxqxlin .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pihxxqxlin .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pihxxqxlin .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pihxxqxlin .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pihxxqxlin .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pihxxqxlin .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pihxxqxlin .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pihxxqxlin .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#pihxxqxlin .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#pihxxqxlin .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pihxxqxlin .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#pihxxqxlin .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pihxxqxlin .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pihxxqxlin .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pihxxqxlin .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pihxxqxlin .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pihxxqxlin .gt_left {
+  text-align: left;
+}
+
+#pihxxqxlin .gt_center {
+  text-align: center;
+}
+
+#pihxxqxlin .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pihxxqxlin .gt_font_normal {
+  font-weight: normal;
+}
+
+#pihxxqxlin .gt_font_bold {
+  font-weight: bold;
+}
+
+#pihxxqxlin .gt_font_italic {
+  font-style: italic;
+}
+
+#pihxxqxlin .gt_super {
+  font-size: 65%;
+}
+
+#pihxxqxlin .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#pihxxqxlin .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#pihxxqxlin .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#pihxxqxlin .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#pihxxqxlin .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#pihxxqxlin .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">teamCode</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ngames</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">shot_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ongoal_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">score_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">shot_con_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ongoal_con_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">score_con_pg</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">NYR</td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_right">41.31579</td>
+<td class="gt_row gt_right">29.84211</td>
+<td class="gt_row gt_right">3.157895</td>
+<td class="gt_row gt_right">49.78947</td>
+<td class="gt_row gt_right">36.21053</td>
+<td class="gt_row gt_right">2.842105</td></tr>
+    <tr><td class="gt_row gt_left">EDM</td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_right">47.31250</td>
+<td class="gt_row gt_right">33.93750</td>
+<td class="gt_row gt_right">4.000000</td>
+<td class="gt_row gt_right">52.43750</td>
+<td class="gt_row gt_right">38.25000</td>
+<td class="gt_row gt_right">3.562500</td></tr>
+    <tr><td class="gt_row gt_left">TBL</td>
+<td class="gt_row gt_right">16</td>
+<td class="gt_row gt_right">42.93750</td>
+<td class="gt_row gt_right">32.25000</td>
+<td class="gt_row gt_right">3.062500</td>
+<td class="gt_row gt_right">44.93750</td>
+<td class="gt_row gt_right">32.12500</td>
+<td class="gt_row gt_right">2.500000</td></tr>
+    <tr><td class="gt_row gt_left">CAR</td>
+<td class="gt_row gt_right">14</td>
+<td class="gt_row gt_right">46.00000</td>
+<td class="gt_row gt_right">31.35714</td>
+<td class="gt_row gt_right">2.571429</td>
+<td class="gt_row gt_right">42.14286</td>
+<td class="gt_row gt_right">29.21429</td>
+<td class="gt_row gt_right">2.857143</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+
+#### Tail:
+
+<div id="sdxgygbuox" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#sdxgygbuox .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sdxgygbuox .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sdxgygbuox .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sdxgygbuox .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sdxgygbuox .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sdxgygbuox .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sdxgygbuox .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sdxgygbuox .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sdxgygbuox .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sdxgygbuox .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sdxgygbuox .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sdxgygbuox .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sdxgygbuox .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sdxgygbuox .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sdxgygbuox .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sdxgygbuox .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sdxgygbuox .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sdxgygbuox .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sdxgygbuox .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sdxgygbuox .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sdxgygbuox .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sdxgygbuox .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sdxgygbuox .gt_left {
+  text-align: left;
+}
+
+#sdxgygbuox .gt_center {
+  text-align: center;
+}
+
+#sdxgygbuox .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sdxgygbuox .gt_font_normal {
+  font-weight: normal;
+}
+
+#sdxgygbuox .gt_font_bold {
+  font-weight: bold;
+}
+
+#sdxgygbuox .gt_font_italic {
+  font-style: italic;
+}
+
+#sdxgygbuox .gt_super {
+  font-size: 65%;
+}
+
+#sdxgygbuox .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#sdxgygbuox .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#sdxgygbuox .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sdxgygbuox .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#sdxgygbuox .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#sdxgygbuox .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">teamCode</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ngames</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">shot_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ongoal_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">score_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">shot_con_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">ongoal_con_pg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">score_con_pg</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">TOR</td>
+<td class="gt_row gt_right">7</td>
+<td class="gt_row gt_right">42.85714</td>
+<td class="gt_row gt_right">29.71429</td>
+<td class="gt_row gt_right">3.428571</td>
+<td class="gt_row gt_right">39.28571</td>
+<td class="gt_row gt_right">30.00000</td>
+<td class="gt_row gt_right">3.142857</td></tr>
+    <tr><td class="gt_row gt_left">MIN</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">45.66667</td>
+<td class="gt_row gt_right">31.00000</td>
+<td class="gt_row gt_right">2.666667</td>
+<td class="gt_row gt_right">41.16667</td>
+<td class="gt_row gt_right">31.16667</td>
+<td class="gt_row gt_right">3.666667</td></tr>
+    <tr><td class="gt_row gt_left">WSH</td>
+<td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">40.66667</td>
+<td class="gt_row gt_right">30.00000</td>
+<td class="gt_row gt_right">3.166667</td>
+<td class="gt_row gt_right">47.00000</td>
+<td class="gt_row gt_right">32.50000</td>
+<td class="gt_row gt_right">3.000000</td></tr>
+    <tr><td class="gt_row gt_left">NSH</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">34.00000</td>
+<td class="gt_row gt_right">26.50000</td>
+<td class="gt_row gt_right">2.250000</td>
+<td class="gt_row gt_right">55.00000</td>
+<td class="gt_row gt_right">41.75000</td>
+<td class="gt_row gt_right">5.000000</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+
+---
+
+# Teams Clustering
+
+## Hierarchical Cluster with Minimax Linkage
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/display-before-hcluster-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Teams Clustering
+
+## Unordered vs. Ordered Distance Heatmap 
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/distance-heatmap-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Teams Clustering
+
+## Minimax Linkage Result 
+
+&lt;img src="EDA---NHL---Presentation_files/figure-html/minimax-linkage-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Conclusions
+
+- Most shots are located in the bat-shaped area between the goal and the blue line, with the mode appears to be at around 10 feet straight in front of the goal.
+Though in general there are more shot attempts closer to the goal, right handed players tend to shot more at farther locations, especially at around 45-55 feet away from the goal.
+
+- Shot attempts are made almost consistently throughout the game(regular time), while there are more goals in the middle of the second period and the later half of the third period towards the end of the game(regular time). 
+In general, Home team makes slightly more shots and a lot more goals than Away team in regular time. Home team makes more shots than Away team as well in extra time, but Away team makes more goals. [(Be Cautious!)]()
+
+- Surprisingly, Away team outperforms Home team at the beginning of the game and towards the end of the game(regular time) on both shots and goals. While there is a big advantage of Home team over Away team on both shots and goals at the end of the fist period and the beginning of the third period.
+
+- Some teams tend to have similar performance and playing style in terms of creating shooting chances and giving away shooting chances for the opponents. 
+
+  - For example, Dallas and Nashville giveaway most shooting chances for their opponents, while creating least shooting chances for themselves. 
+
+  - Another example, Colorado, Calgary, and Pittsburgh create most shooting chances for themselves, while giving away some of the fewest shooting chances for their opponents. [(Be Cautious!)]()
+
+---
+
+class: inverse center middle
+
+# See more details at
+
+```
+https://github.com/gary-boyuan-zhang/SURE-CMU/tree/main/EDA%20-%20NHL
+```
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

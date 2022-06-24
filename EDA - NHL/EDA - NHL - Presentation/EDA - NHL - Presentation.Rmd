@@ -1,0 +1,669 @@
+---
+title: "**Exploratory Data Analysis Project**"
+subtitle: "**NHL Data**"  
+author: 
+  - "**Boyuan(Gary) Zhang**"
+  - "_bz2058@nyu.edu_"
+institute: 
+  - "Summer Undergraduate Research Experience"
+  - "Department of Statistics & Data Science"
+  - "Carnegie Mellon University"
+date: "June 24, 2022"
+output:
+  xaringan::moon_reader:
+    css: ["default", "nyu-metro.css", "metropolis-fonts"]
+    #css: nyu-metro.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#57068c",
+  secondary_color = "#8900e1",
+  inverse_header_color = "#FFFFFF"
+)
+```
+
+# Data
+
+```{r load-packages, warning = FALSE, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+library(cowplot)
+```
+
+## NHL Shot Data
+
+```{r load-data, warning = FALSE, message = FALSE, echo = FALSE}
+playoff_shot_data <- read_csv("nhl_playoffs_shots_2022.csv")
+```
+
+- Contains all shot attempts from the 2022 NHL playoffs (through June 10th), courtesy of [`MoneyPuck.com`](http://www.stat.cmu.edu/cmsac/sure/2022/materials/data/sports/eda_projects/nhl_playoffs_shots_2022.csv)
+
+- There are 7721 observations and 34 variables
+
+- Player variables: shooterName, shooterLeftRight, teamCode 
+
+- Shot variables: event, arenaAdjustedShotDistance, arenaAdjustedCords, time
+
+```{r display-data, warning = FALSE, message = FALSE, echo = FALSE}
+library(gt)
+playoff_shot_data %>%
+  select(shooterName, shooterLeftRight, teamCode,
+         event, shotType, arenaAdjustedShotDistance,
+         arenaAdjustedXCord, arenaAdjustedYCord, time) %>%
+  rename(Name = shooterName,
+         LR = shooterLeftRight,
+         team = teamCode,
+         distance = arenaAdjustedShotDistance,
+         X = arenaAdjustedXCord,
+         Y = arenaAdjustedYCord) %>%
+  head(5) %>%
+  gt()
+```
+
+.footnote[###### adjusted for arena recording bias - uses the same methodology as [`War On Ice`](http://blog.war-on-ice.com/index.html%3Fp=512.html) proposed by [`Schuckers and Curro`](https://www.statsportsconsulting.com/wp-content/uploads/Schuckers_Curro_MIT_Sloan_THoR.pdf)]
+
+---
+
+# Data
+
+## Limitations
+
+### Playoff only:
+  - Number of games played by teams/players varies (i.e. 8 teams only play with 1 opponent)
+  - Tend to bias and in favor towards the finalist teams
+  - Sample size is relatively small
+
+### Observed variables:
+  - Player position
+  - Player total time on ice
+
+---
+
+# Shot Location
+
+## Where are shots located on the court?
+
+```{r shot_location_point, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+library(sportyR)
+geom_hockey(league = 'NHL') +
+  geom_point(data = playoff_shot_data,
+             aes(x = arenaAdjustedXCord, y = arenaAdjustedYCord),
+             alpha = 0.1) +
+  geom_density2d(adjust = 1) +
+  theme_bw() +
+  coord_fixed() 
+```
+
+---
+
+# Shot Location
+
+## Where are shots located on the court?
+
+```{r shot_location_heatmap, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+geom_hockey(league = 'NHL') +
+  stat_density2d(data = playoff_shot_data,
+                 adjust = 0.8,
+                 #h = 1.2, bins = 40,
+                 alpha = 0.3,
+                 aes(x = arenaAdjustedXCord, y = arenaAdjustedYCord, 
+                     fill = after_stat(level)),
+                 geom = "polygon") +
+  scale_fill_gradient(low = "darkblue",
+                      high = "darkorange") +
+  theme_bw() +
+  coord_fixed() +
+  theme(legend.position = 'bottom',
+        legend.text = element_blank())
+```
+
+
+---
+
+# Shot Location
+
+## Are there any difference between Left and Right handed player?
+
+```{r shot_location_LR, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+# left
+relative_l <- geom_hockey(league = 'NHL', full_surf = FALSE) +
+  stat_density2d(data = filter(playoff_shot_data, shooterLeftRight == 'L'),
+                 adjust = 0.8,
+                 #h = 1.2, bins = 40,
+                 alpha = 0.3,
+                 aes(x = -abs(arenaAdjustedXCord), y = arenaAdjustedYCord, 
+                     fill = after_stat(level)),
+                 geom = "polygon") +
+  scale_fill_gradient(low = "darkblue",
+                      high = "darkorange") +
+  theme_bw() +
+  coord_fixed() +
+  labs(title = 'Left') +
+  theme(legend.position = 'none',
+        plot.caption = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+# right
+relative_r <- geom_hockey(league = 'NHL', full_surf = FALSE) +
+  stat_density2d(data = filter(playoff_shot_data, shooterLeftRight == 'R'),
+                 adjust = 0.8,
+                 #h = 1.2, bins = 40,
+                 alpha = 0.3,
+                 aes(x = -abs(arenaAdjustedXCord), y = arenaAdjustedYCord, 
+                     fill = after_stat(level)),
+                 geom = "polygon") +
+  scale_fill_gradient(low = "darkblue",
+                      high = "darkorange") +
+  theme_bw() +
+  coord_fixed()+
+  labs(title = 'Right') +
+  theme(legend.position = 'none',
+        plot.caption = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+plot_grid(relative_l, relative_r)
+```
+
+
+---
+
+# Shot Location
+
+## Where are goals located on the court?
+
+```{r score_location_point, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+geom_hockey(league = 'NHL') +
+  geom_point(data = filter(playoff_shot_data, event == 'GOAL'),
+             aes(x = arenaAdjustedXCord, y = arenaAdjustedYCord),
+             alpha = 0.2) +
+  geom_density2d(adjust = 1) +
+  theme_bw() +
+  coord_fixed() 
+```
+
+---
+
+# Time Distribution
+
+## When are shots and goals happened in regular time?
+
+```{r regular_dens+regular_ecdf, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+regular_dens <- playoff_shot_data %>%
+  filter(time < 3600) %>%
+  ggplot(aes(x = time, color = (event == 'GOAL'))) +
+  geom_density(size = 1) +
+  geom_rug(alpha = 0.1) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  scale_color_colorblind() +
+  scale_color_discrete(name = '', labels = c('Shot', 'Goal')) +
+  theme(legend.position = 'bottom')
+
+regular_ecdf <- playoff_shot_data %>%
+  filter(time < 3600) %>%
+  ggplot(aes(x = time, color = (event == 'GOAL'))) +
+  stat_ecdf(size = 0.65) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  scale_color_colorblind() +
+  scale_color_discrete(name = '', labels = c('Shot', 'Goal')) +
+  theme(legend.position = 'bottom')
+
+regular_dens + regular_ecdf
+```
+
+---
+
+# Time Distribution - Home & Away
+
+### How does shots/goals from Home&Away teams distributed over regular time?
+
+```{r team_comparison_regular, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+shot_dens <- playoff_shot_data %>%
+  filter(time < 3600) %>%
+  ggplot(aes(x = time, color = as.character(isHomeTeam))) +
+  geom_density(adjust = 0.7, size = 1) +
+  geom_rug(alpha = 0.3) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  labs(y = '# Shots') +
+  scale_color_discrete(name = '', labels = c('Away', 'Home')) +
+  theme(legend.position = 'bottom')
+  
+
+shot_ecdf <- playoff_shot_data %>%
+  filter(time < 3600) %>%
+  ggplot(aes(x = time, color = as.character(isHomeTeam))) +
+  stat_ecdf() +
+  geom_rug(alpha = 0.3) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  labs(y = '% Shots') +
+  theme(legend.position = 'bottom') +
+  scale_color_discrete(name = '', labels = c('Away', 'Home')) 
+
+goal_dens <- playoff_shot_data %>%
+  filter(time < 3600, event == 'GOAL') %>%
+  ggplot(aes(x = time, color = as.character(isHomeTeam))) +
+  geom_density(adjust = 0.7, size = 1) +
+  geom_rug(alpha = 0.3) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  labs(y = '# Goals')+
+  scale_color_discrete(name = '', labels = c('Away', 'Home')) +
+  theme(legend.position = 'bottom')
+  
+
+goal_ecdf <- playoff_shot_data %>%
+  filter(time < 3600, event == 'GOAL') %>%
+  ggplot(aes(x = time, color = as.character(isHomeTeam))) +
+  stat_ecdf(size = 0.8) +
+  geom_rug(alpha = 0.3) +
+  geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
+  theme_bw() +
+  labs(y = '% Goals') +
+  theme(legend.position = 'bottom') +
+  scale_color_discrete(name = '', labels = c('Away', 'Home')) 
+
+##plot_grid(shot_dens, shot_ecdf,
+##          goal_dens, goal_ecdf, 
+##          ncol = 2)
+
+shot_dens + goal_dens + 
+  plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
+
+```
+
+---
+
+# Time Distribution - Home & Away
+
+### How many shots/goals do Home & Away teams made in regular time?
+
+```{r team-level-summary, warning = FALSE, message = FALSE, echo = FALSE}
+team_summary <- playoff_shot_data %>%
+    filter(time < 3600) %>%
+    group_by(isHomeTeam) %>%
+    summarise(goal = sum(event == 'GOAL'),
+              shot = n()) %>%
+    mutate(isHomeTeam = as.character(isHomeTeam))
+```
+
+```{r team_summary_bars, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+team_summary_goal_bar <- team_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  theme_bw()
+
+team_summary_shot_bar <- team_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  theme_bw()
+
+team_summary_shot_bar + team_summary_goal_bar
+```
+
+---
+
+# Time Distribution - Home & Away
+
+### How many shots/goals do Home & Away teams made in extra time?
+
+```{r overtime-summary, warning = FALSE, message = FALSE, echo = FALSE}
+overtime_summary <- playoff_shot_data %>%
+  filter(time > 3600) %>%
+  group_by(isHomeTeam) %>%
+  summarise(goal = sum(event == 'GOAL'),
+            shot = n()) %>%
+  mutate(isHomeTeam = as.character(isHomeTeam))
+```
+
+```{r overtime_summary_bars, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+
+overtime_summary_goal_bar <- overtime_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  theme_bw()
+
+overtime_summary_shot_bar <- overtime_summary %>%
+  ggplot(aes(x = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  theme_bw()
+
+overtime_summary_shot_bar + overtime_summary_goal_bar
+```
+
+---
+
+# Time Distribution - Home & Away
+
+## Compare shots/goals of Home&Away teams in regular/extra time
+
+.left-column[
+
+<br />
+<br />
+
+###   Regular Time
+
+<br />
+<br />
+<br />
+<br />
+
+###   Extra Time
+
+]
+
+.right-column[
+```{r team-summary-comparison-time, fig.height = 6, fig.width = 10, echo = FALSE, fig.align='center'}
+team_summary_goal_pie <- team_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  coord_polar('y') +
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.title.y = element_blank())
+
+team_summary_shot_pie <- team_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  coord_polar('y') +
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.title.y = element_blank())
+
+#team_summary_shot_pie + team_summary_goal_pie + plot_layout(guides = 'collect')
+
+overtime_summary_goal_pie <- overtime_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = goal),
+           stat = 'identity') +
+  coord_polar('y') +
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.title.y = element_blank())
+
+overtime_summary_shot_pie <- overtime_summary %>%
+  ggplot(aes(x = '', fill = isHomeTeam)) +
+  geom_bar(aes(y = shot),
+           stat = 'identity') +
+  coord_polar('y') +
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.title.y = element_blank())
+
+team_summary_shot_pie + team_summary_goal_pie +
+  overtime_summary_shot_pie + overtime_summary_goal_pie + 
+  plot_layout(ncol = 2, guides = 'collect')
+```
+]
+
+---
+
+# Teams Clustering
+
+## Team Data Aggregation 
+
+```{r team-data-aggregation, warning = FALSE, message = FALSE, echo = FALSE}
+team_data <- playoff_shot_data %>%
+  filter(time < 3600) %>%
+  group_by(teamCode) %>% 
+  summarise(total_shot = n(),
+         total_score = sum(event == 'GOAL'),
+         total_ongoal = sum(event != 'MISS'),
+         ngames = n_distinct(game_id)) %>%
+  mutate(shot_pg = total_shot / ngames,
+         score_pg = total_score / ngames,
+         ongoal_pg = total_ongoal / ngames)
+
+concede_data <- playoff_shot_data %>%
+  mutate(opponent = ifelse(teamCode == homeTeamCode, awayTeamCode, homeTeamCode)) %>%
+  filter(time < 3600) %>%
+  group_by(opponent) %>%
+  summarise(total_shot_concede = n(),
+            total_score_concede = sum(event == 'GOAL'),
+            total_ongoal_concede = sum(event != 'MISS'))
+
+team_data <- team_data %>%
+  inner_join(concede_data, by = c('teamCode' = 'opponent')) %>%
+  mutate(shot_con_pg = total_shot_concede / ngames,
+         score_con_pg = total_score_concede / ngames,
+         ongoal_con_pg = total_ongoal_concede / ngames)
+```
+
+#### Head:
+
+```{r display-team-head, warning = FALSE, message = FALSE, echo = FALSE}
+team_data %>%
+  select(teamCode, ngames,
+         shot_pg, ongoal_pg, score_pg,
+         shot_con_pg, ongoal_con_pg, score_con_pg) %>%
+  arrange(desc(ngames)) %>%
+  head(4) %>%
+  gt()
+```
+
+#### Tail:
+
+```{r display-team-tail, warning = FALSE, message = FALSE, echo = FALSE}
+team_data %>%
+  select(teamCode, ngames,
+         shot_pg, ongoal_pg, score_pg,
+         shot_con_pg, ongoal_con_pg, score_con_pg) %>%
+  arrange(desc(ngames)) %>%
+  tail(4) %>%
+  gt()
+```
+
+---
+
+# Teams Clustering
+
+## Hierarchical Cluster with Minimax Linkage
+
+```{r display-before-hcluster, fig.height = 6, fig.width = 14, echo = FALSE, fig.align='center'}
+team_data %>%
+  #mutate(team_clusters = as.factor(team_shot_minimax_cluster$cl)) %>%
+  ggplot(aes(x = shot_pg, y = shot_con_pg,
+             #color = team_clusters,
+             label = teamCode,
+             #size = abs(shot_pg - shot_con_pg)
+             )) +
+  geom_point() + 
+  geom_text(hjust = 0.5, vjust = 1.2) +
+  geom_abline(slope = 1, intercept = 0) +
+  #scale_color_colorblind() +
+  theme_bw() +
+  coord_fixed()
+  #theme(legend.position = 'bottom')
+```
+
+---
+
+# Teams Clustering
+
+## Unordered vs. Ordered Distance Heatmap 
+
+```{r distance-heatmap, fig.height = 6.5, fig.width = 14, echo = FALSE, fig.align='center'}
+  # shot_pg vs. shot_con_pg
+
+    ## construct team_shot_dist & team_shot_dist_matrix
+
+team_shot_dist <- team_data %>%
+  select(shot_pg, shot_con_pg) %>%
+  dist()
+
+team_shot_dist_matrix <- team_shot_dist %>%
+  as.matrix()
+
+rownames(team_shot_dist_matrix) <- team_data$teamCode
+colnames(team_shot_dist_matrix) <- team_data$teamCode
+
+##head(team_shot_dist_matrix)
+
+    ## pivot longer to get team_shot_dist_table
+
+team_shot_dist_table <- team_shot_dist_matrix %>%
+  as_tibble() %>%
+  mutate(team1 = rownames(team_shot_dist_matrix)) %>%
+  pivot_longer(cols = -team1,
+               names_to = 'team2',
+               values_to = 'dist')
+
+    ## plot unordered distance heatmap
+
+unordered_distance_heatmap <- team_shot_dist_table %>%
+  ggplot(aes(x = team1, y = team2,
+             fill = dist)) +
+  geom_tile() +
+  theme_bw() +
+  theme(legend.position = 'bottom') +
+  scale_fill_gradient(low = 'darkorange',
+                      high = 'darkblue')
+
+    ## order dist table with serialization
+
+library(seriation)
+
+order <- team_shot_dist %>%
+  seriate() %>%
+  get_order()
+
+team_shot_order <- team_data$teamCode[order]
+
+    ## plot ordered distance heatmap
+
+ordered_distance_heatmap <- team_shot_dist_table %>%
+  mutate(team1 = fct_relevel(team1, team_shot_order),
+         team2 = fct_relevel(team2, team_shot_order)) %>%
+  ggplot(aes(x = team1, y = team2,
+             fill = dist)) +
+  geom_tile() +
+  theme_bw() +
+  theme(legend.position = 'bottom') +
+  scale_fill_gradient(low = 'darkorange',
+                      high = 'darkblue')
+
+# plot side by side
+
+unordered_distance_heatmap + ordered_distance_heatmap + 
+  plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
+
+```
+
+---
+
+# Teams Clustering
+
+## Minimax Linkage Result 
+
+```{r minimax-linkage, fig.height = 5, fig.width = 10, echo = FALSE, fig.align='center'}
+    ## h cluster with minimax linkage
+
+library(protoclust)
+
+team_shot_minimax <- protoclust(team_shot_dist)
+
+    ## protoclust dendrogram
+
+library(ggdendro)
+
+team_shot_dendro <- team_shot_minimax %>%
+  ggdendrogram(theme_dendro = FALSE,
+               labels = FALSE,
+               leaf_labels = FALSE) +
+  geom_hline(yintercept = 6, linetype = 'twodash', color = 'red') +
+  labs(y = 'Maximum dissimilarity from prototype') +
+  theme_bw() +
+  theme(axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        panel.grid = element_blank())
+
+    ## protocut
+
+team_shot_minimax_cluster <- team_shot_minimax %>%
+  protocut(h = 6)
+
+    ## plot protoclust result
+
+team_shot_clustered <- team_data %>%
+  mutate(team_clusters = as.factor(team_shot_minimax_cluster$cl)) %>%
+  ggplot(aes(x = shot_pg, y = shot_con_pg,
+             color = team_clusters,
+             label = teamCode,
+             #size = abs(shot_pg - shot_con_pg)
+             )) +
+  geom_point() + 
+  geom_text(hjust = 0.5, vjust = 1.2) +
+  geom_abline(slope = 1, intercept = 0) +
+  scale_color_colorblind() +
+  theme_bw() +
+  theme(legend.position = 'bottom') +
+  coord_fixed()
+
+team_shot_dendro + team_shot_clustered
+```
+
+---
+
+# Conclusions
+
+- Most shots are located in the bat-shaped area between the goal and the blue line, with the mode appears to be at around 10 feet straight in front of the goal.
+Though in general there are more shot attempts closer to the goal, right handed players tend to shot more at farther locations, especially at around 45-55 feet away from the goal.
+
+- Shot attempts are made almost consistently throughout the game(regular time), while there are more goals in the middle of the second period and the later half of the third period towards the end of the game(regular time). 
+In general, Home team makes slightly more shots and a lot more goals than Away team in regular time. Home team makes more shots than Away team as well in extra time, but Away team makes more goals. [(Be Cautious!)]()
+
+- Surprisingly, Away team outperforms Home team at the beginning of the game and towards the end of the game(regular time) on both shots and goals. While there is a big advantage of Home team over Away team on both shots and goals at the end of the fist period and the beginning of the third period.
+
+- Some teams tend to have similar performance and playing style in terms of creating shooting chances and giving away shooting chances for the opponents. 
+
+  - For example, Dallas and Nashville giveaway most shooting chances for their opponents, while creating least shooting chances for themselves. 
+
+  - Another example, Colorado, Calgary, and Pittsburgh create most shooting chances for themselves, while giving away some of the fewest shooting chances for their opponents. [(Be Cautious!)]()
+
+---
+
+class: inverse center middle
+
+# See more details at
+
+```
+https://github.com/gary-boyuan-zhang/SURE-CMU/tree/main/EDA%20-%20NHL
+```
+

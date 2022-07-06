@@ -54,7 +54,7 @@ playoff_shot_data %>%
 playoff_shot_data %>%
   filter(time < 3600) %>%
   ggplot(aes(x = time, color = event)) +
-  geom_density(size = 1) +
+  geom_density(bounds = c(0, 3600), size = 1) +
   geom_rug(alpha = 0.05) +
   theme_bw() +
   scale_color_colorblind() +

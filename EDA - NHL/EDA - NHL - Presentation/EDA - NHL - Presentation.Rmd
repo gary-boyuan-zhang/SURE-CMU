@@ -214,7 +214,7 @@ geom_hockey(league = 'NHL') +
 regular_dens <- playoff_shot_data %>%
   filter(time < 3600) %>%
   ggplot(aes(x = time, color = (event == 'GOAL'))) +
-  geom_density(size = 1) +
+  geom_density(size = 1, bounds = c(0, 3600)) +
   geom_rug(alpha = 0.1) +
   geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
   theme_bw() +
@@ -245,7 +245,7 @@ regular_dens + regular_ecdf
 shot_dens <- playoff_shot_data %>%
   filter(time < 3600) %>%
   ggplot(aes(x = time, color = as.character(isHomeTeam))) +
-  geom_density(adjust = 0.7, size = 1) +
+  geom_density(adjust = 0.7, size = 1, bounds = c(0, 3600)) +
   geom_rug(alpha = 0.3) +
   geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
   theme_bw() +
@@ -268,7 +268,7 @@ shot_ecdf <- playoff_shot_data %>%
 goal_dens <- playoff_shot_data %>%
   filter(time < 3600, event == 'GOAL') %>%
   ggplot(aes(x = time, color = as.character(isHomeTeam))) +
-  geom_density(adjust = 0.7, size = 1) +
+  geom_density(adjust = 0.7, size = 1, bounds = c(0, 3600)) +
   geom_rug(alpha = 0.3) +
   geom_vline(xintercept = c(1200, 2400), linetype = 'twodash') +
   theme_bw() +

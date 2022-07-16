@@ -3,9 +3,12 @@
 
 library(worldfootballR)
 library(tidyverse)
-
+library(janitor)
+library(broom)
 
 # start scrapping ---------------------------------------------------------
+
+mapped_players <- player_dictionary_mapping()
 
 standard <- fb_big5_advanced_season_stats(season_end_year= 2022,
                                           stat_type= "standard",
@@ -14,6 +17,9 @@ shooting <- fb_big5_advanced_season_stats(season_end_year= 2022,
                                           stat_type= "shooting",
                                           team_or_player= "player")
 passing <- fb_big5_advanced_season_stats(season_end_year= 2022,
+                                         stat_type= "passing",
+                                         team_or_player= "player")
+passing_types <- fb_big5_advanced_season_stats(season_end_year= 2022,
                                          stat_type= "passing_types",
                                          team_or_player= "player")
 gca <- fb_big5_advanced_season_stats(season_end_year= 2022,
@@ -44,8 +50,11 @@ keepers_adv <- fb_big5_advanced_season_stats(season_end_year= 2022,
 
 pl_all <- standard %>%
   filter(Comp == "Premier League") %>%
+  rename("UrlFBref" = Url) %>%
+  left_join(mapped_players) %>%
   left_join(shooting) %>%
   left_join(passing) %>%
+  left_join(passing_types) %>%
   left_join(gca) %>%
   left_join(defense) %>%
   left_join(possession) %>%
@@ -54,78 +63,98 @@ pl_all <- standard %>%
   left_join(keepers) %>%
   left_join(keepers_adv)
 
-pl_gk <- pl_all %>%
-  filter(Pos == "GK")
-
-pl_df <- standard %>%
-  filter(Comp == "Premier League", Pos == "DF") %>%
+pl_nongk <- standard %>%
+  filter(Comp == "Premier League", Pos != "GK") %>%
+  rename("UrlFBref" = Url) %>%
+  left_join(mapped_players) %>%
   left_join(shooting) %>%
   left_join(passing) %>%
+  left_join(passing_types) %>%
   left_join(gca) %>%
   left_join(defense) %>%
   left_join(possession) %>%
   left_join(playing_time) %>%
   left_join(misc)
 
+pl_gk <- pl_all %>%
+  filter(Pos == "GK")
+
+pl_cb <- pl_nongk %>%
+  filter(TmPos == "Centre-Back", Min_Playing >= 600) %>%
+  select(-UrlFBref, -UrlTmarkt, -Url, -PlayerFBref, -Pos, -Born)
+  
+
+# Exploratory PCA ---------------------------------------------------------
+
+model_cb <- pl_cb %>%
+  select_if(is.numeric) %>%
+  select(-Season_End_Year) %>%
+  remove_constant(na.rm = TRUE) %>%
+  as.matrix()
+model_cb <- t(na.omit(t(model_cb))) %>% as_tibble()
+
+pca_cb <- prcomp(model_cb, center = TRUE, scale = TRUE)
+summary(pca_cb)
+
+pca_cb %>%
+  tidy(matrix = "eigenvalues") %>%
+  ggplot(aes(x = PC, y = percent)) +
+  geom_line() +
+  geom_point() +
+  geom_hline(yintercept = 1 / ncol(model_cb),
+             color = "darkred",
+             linetype = "dashed") +
+  theme_bw()
+
+loadings_cb <- pca_cb %>%
+  tidy(matrix = "loadings") %>%
+  filter(PC <= 7) %>%
+  group_by(column) %>%
+  mutate(tot_abs_value = sum(abs(value))) %>%
+  ungroup() %>%
+  #arrange(by = desc(tot_abs_value)) %>%
+  filter(PC == 1) %>%
+  select(column, tot_abs_value)
+  
+weights_cb <- t(loadings_cb) %>%
+  row_to_names(row_number = 1) %>%
+  as_tibble()
+
+ratings_cb <- list()
+for (i in seq(1, nrow(pl_cb))) {
+  ratings_cb[i] <- rowSums(slice(model_cb, i) * as.numeric(weights_cb))
+}
+ratings_cb <- ratings_cb %>%
+  as_tibble_col(column_name = "Rating") %>%
+  mutate(Player = pl_cb$Player, Rating = as.numeric(Rating)) %>%
+  select(Player, Rating) %>%
+  arrange(by = desc(Rating))
 
 
-# DF DF,FW DF,MF    FW FW,DF FW,MF    GK    MF MF,DF MF,FW 
-#185     4     5    83     2    59    42   116    11    39 
 
 
-pl_all %>% 
-  filter(Pos == 'DF,FW') %>%
-  select(Player, Min_Playing)
-#Player Min_Playing
-#1   Ashley Young        1250
-#2  Tariq Lamptey        1561
-#3    Solly March        1746
-#4 Arthur Masuaku         650
-
-pl_all %>% 
-  filter(Pos == 'FW,DF') %>%
-  select(Player, Min_Playing)
-#Player Min_Playing
-#1 Marc Albrighton        1132
-#2    Jacob Murphy        1473
 
 
-pl_all %>% 
-  filter(Pos == 'DF,MF') %>%
-  select(Player, Min_Playing)
-#Player Min_Playing
-#1    Saman Ghoddos         536
-#2    Stuart Dallas        2919
-#3 Jamie Shackleton         709
-#4  Hamza Choudhury         285
-#5        Chiquinho         208
 
-pl_all %>% 
-  filter(Pos == 'MF,DF') %>%
-  select(Player, Min_Playing)
-#Player Min_Playing
-#1           Granit Xhaka        2327
-#2     Pascal Gro<U+00DF>        2038
-#3     Ruben Loftus-Cheek        1394
-#4     Saúl <U+00D1>íguez         480
-#5             Alex Iwobi        2035
-#6             Robin Koch        1574
-#7          Wilfred Ndidi        1618
-#8           James Milner         853
-#9            Fernandinho         964
-#10          Isaac Hayden        1002
-#11 Jakob S<U+00F8>rensen         604
+summary(pl_cb$Min_Playing)
+pl_cb %>%
+  ggplot(aes(x = Min_Playing)) +
+  stat_ecdf() +
+  geom_rug(alpha = 0.5) +
+  geom_vline(xintercept = 600, color = 'red') +
+  geom_vline(xintercept = 1000, color = 'red') +
+  theme_bw()
 
-pl_all %>% 
-  filter(Pos == 'MF,FW') %>%
-  select(Player, Min_Playing)
 
-pl_all %>% 
-  filter(Pos == 'FW,MF') %>%
-  select(Player, Min_Playing)
+
+
+
+
 
 
 # save data ---------------------------------------------------------------
 
 write_csv(pl_all, "Final Project/pl_all.csv")
-write_csv(pl_gk, "Final Project/pl_gk.csv")
+write_csv(pl_nongk, "Final Project/pl_nongk.csv")
+write_csv(pl_cb, "Final Project/pl_cb.csv")
+write_csv(ratings_cb, "Final Project/ratings_cb.csv")

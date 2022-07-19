@@ -84,55 +84,10 @@ pl_cb <- pl_nongk %>%
   select(-UrlFBref, -UrlTmarkt, -Url, -PlayerFBref, -Pos, -Born)
   
 
-# Exploratory PCA ---------------------------------------------------------
-
-model_cb <- pl_cb %>%
-  select_if(is.numeric) %>%
-  select(-Season_End_Year) %>%
-  remove_constant(na.rm = TRUE) %>%
-  as.matrix()
-model_cb <- t(na.omit(t(model_cb))) %>% as_tibble()
-
-pca_cb <- prcomp(model_cb, center = TRUE, scale = TRUE)
-summary(pca_cb)
-
-pca_cb %>%
-  tidy(matrix = "eigenvalues") %>%
-  ggplot(aes(x = PC, y = percent)) +
-  geom_line() +
-  geom_point() +
-  geom_hline(yintercept = 1 / ncol(model_cb),
-             color = "darkred",
-             linetype = "dashed") +
-  theme_bw()
-
-loadings_cb <- pca_cb %>%
-  tidy(matrix = "loadings") %>%
-  filter(PC <= 7) %>%
-  group_by(column) %>%
-  mutate(tot_abs_value = sum(abs(value))) %>%
-  ungroup() %>%
-  #arrange(by = desc(tot_abs_value)) %>%
-  filter(PC == 1) %>%
-  select(column, tot_abs_value)
-  
-weights_cb <- t(loadings_cb) %>%
-  row_to_names(row_number = 1) %>%
-  as_tibble()
-
-ratings_cb <- list()
-for (i in seq(1, nrow(pl_cb))) {
-  ratings_cb[i] <- rowSums(slice(model_cb, i) * as.numeric(weights_cb))
-}
-ratings_cb <- ratings_cb %>%
-  as_tibble_col(column_name = "Rating") %>%
-  mutate(Player = pl_cb$Player, Rating = as.numeric(Rating)) %>%
-  select(Player, Rating) %>%
-  arrange(by = desc(Rating))
 
 
 
-
+# explore ----------------------------------------------------------
 
 
 

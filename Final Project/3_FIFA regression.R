@@ -8,46 +8,13 @@ library(caret)
 
 fifa22 <- read_csv("Final Project/FIFA22_official_data.csv")
 pl_cb <- read_csv("Final Project/pl_cb.csv")
-pl_cb_fifa22 <- read_csv("Final Project/pl_cb_fifa22.csv")
-
-# Scrape data -------------------------------------------------------------
-
-library(devtools)
-install_github("valentinumbach/SoFIFA", force = TRUE)
-library(SoFIFA)
-
-leagues <- get_leagues()
-teams <- get_teams(13)
-players <- get_players()
-
-league_scores <- get_league_scores(13)
-team_scores <- get_team_scores(18)
 
 
 # clean data --------------------------------------------------------------
 
-pl_clubs <- unique(pl_cb$Squad)
-fifa22_pl <- fifa22 %>%
-  filter(Club %in% pl_clubs) 
+  # see python notebook
 
-%>%
-  #filter(Position %in% c("<span class="pos pos4">RCB", "<span class="pos pos5">CB"))
-  filter(Name %in% pl_cb$Player)
-  select(contains("CB"))
-  
-table(fifa22_pl$Position)
-
-fifa22_pl$Name
-temp <- fifa22_pl$Name %>% 
-  as_tibble_col() %>%
-  select_if(grepl("Mina") == TRUE)
-
-fifa22_pl$Name %>%
-  select_if(grepl("Mina", fifa22_pl$Name) == TRUE)
-
-
-grepl("Mian", temp)
-
+pl_cb_fifa22 <- read_csv("Final Project/pl_cb_fifa22.csv")
 
 # clean new data ----------------------------------------------------------
 
@@ -84,13 +51,11 @@ ggplot(cv_model_pcr) + theme_bw()
 
 
 summary(cv_model_pcr$finalModel)
+cv_model_pcr$finalModel$coefficients
 
 
 # pls ---------------------------------------------------------------------
 
-
-
-  #pls
 set.seed(2022)
 cv_model_pls <- train(
   Overall ~ .,
@@ -105,13 +70,20 @@ ggplot(cv_model_pls) + theme_bw()
 
 summary(cv_model_pls$finalModel)
 
+
+  ### Interpret PLS result
+
 coef <- cv_model_pls$finalModel$coefficients
 #coef <- as_tibble(coef)
 view(coef)
 
-cv_model_pls$pred
+weight <- cv_model_pls$finalModel$loading.weights
+view(weight)
 
-predictions <- predict(cv_model_pls)
+predictions <- predict(cv_model_pls$finalModel)
+view(predictions)
+
+
 
 # variable importance -----------------------------------------------------
 

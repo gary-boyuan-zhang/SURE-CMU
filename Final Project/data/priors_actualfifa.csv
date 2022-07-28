@@ -1,0 +1,683 @@
+﻿Player,Season_End_Year,Squad,Comp,Min,Pred,Pred_scaled,Nation,Pos,Age,overall,UrlFBref
+Ederson,2022,Manchester City,Premier League,3330,88.14835514,3.684917565,BRA,GK,27,89,https://fbref.com/en/players/3bb7b8b4/Ederson
+João Cancelo,2022,Manchester City,Premier League,3227,88.39155393,3.776152483,POR,DF,27,86,https://fbref.com/en/players/bd6351cd/Joao-Cancelo
+Rodri,2022,Manchester City,Premier League,2884,87.50666459,3.444190274,ESP,MF,25,86,https://fbref.com/en/players/6434f10d/Rodri
+Bernardo Silva,2022,Manchester City,Premier League,2857,86.60290821,3.105150184,POR,"MF,FW",26,86,https://fbref.com/en/players/3eb22ec9/Bernardo-Silva
+Aymeric Laporte,2022,Manchester City,Premier League,2828,86.94222412,3.232443004,ESP,DF,27,86,https://fbref.com/en/players/119b9a8e/Aymeric-Laporte
+Rúben Dias,2022,Manchester City,Premier League,2402,87.23700289,3.343027916,POR,DF,24,87,https://fbref.com/en/players/31c69ef1/Ruben-Dias
+Kevin De Bruyne,2022,Manchester City,Premier League,2201,86.60225618,3.104905579,BEL,MF,30,91,https://fbref.com/en/players/e46012d4/Kevin-De-Bruyne
+Phil Foden,2022,Manchester City,Premier League,2128,87.30791481,3.369630199,ENG,FW,21,84,https://fbref.com/en/players/ed1e53f3/Phil-Foden
+Raheem Sterling,2022,Manchester City,Premier League,2128,86.64788925,3.122024615,ENG,FW,26,88,https://fbref.com/en/players/b400bde0/Raheem-Sterling
+Jack Grealish,2022,Manchester City,Premier League,1914,85.99605118,2.877490531,ENG,FW,25,84,https://fbref.com/en/players/b0b4fd3e/Jack-Grealish
+Gabriel Jesus,2022,Manchester City,Premier League,1877,86.3261597,3.001329241,BRA,FW,24,83,https://fbref.com/en/players/b66315ae/Gabriel-Jesus
+İlkay Gündoğan,2022,Manchester City,Premier League,1857,87.76582785,3.541414191,GER,MF,30,85,https://fbref.com/en/players/819b3158/Ilkay-Gundogan
+Kyle Walker,2022,Manchester City,Premier League,1755,82.89184237,1.712960729,ENG,DF,31,85,https://fbref.com/en/players/86dd77d1/Kyle-Walker
+Riyad Mahrez,2022,Manchester City,Premier League,1498,83.56571764,1.965761969,ALG,FW,30,86,https://fbref.com/en/players/892d5bb1/Riyad-Mahrez
+John Stones,2022,Manchester City,Premier League,1119,80.48767726,0.811049132,ENG,DF,27,83,https://fbref.com/en/players/5eecec3d/John-Stones
+Oleksandr Zinchenko,2022,Manchester City,Premier League,1047,84.35965587,2.26360428,UKR,DF,24,80,https://fbref.com/en/players/51cf8561/Oleksandr-Zinchenko
+Fernandinho,2022,Manchester City,Premier League,964,81.80161437,1.303966657,BRA,"MF,DF",36,83,https://fbref.com/en/players/101da2b5/Fernandinho
+Nathan Aké,2022,Manchester City,Premier League,923,81.05322472,1.023211688,NED,DF,26,78,https://fbref.com/en/players/eaeca114/Nathan-Ake
+Ferrán Torres,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Cole Palmer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Zack Steffen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Benjamin Mendy,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+James Mcatee,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,61,NA
+Liam Delap,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,64,NA
+Kayky Chagas,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+CJ Egan-Riley,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,59,NA
+Scott Carson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Thomas Doyle,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Samuel Edozie,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Roméo Lavia,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Luke Mbete-Tatu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Cieran Slicker,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Josh Wilson-Esbrand,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Alisson,2022,Liverpool,Premier League,3240,87.27274296,3.35643564,BRA,GK,28,89,https://fbref.com/en/players/7a2e46a8/Alisson
+Virgil van Dijk,2022,Liverpool,Premier League,3060,82.84423101,1.695099545,NED,DF,30,89,https://fbref.com/en/players/e06683ca/Virgil-van-Dijk
+Trent Alexander-Arnold,2022,Liverpool,Premier League,2853,85.43065664,2.665385344,ENG,DF,22,87,https://fbref.com/en/players/cd1acf9d/Trent-Alexander-Arnold
+Sadio Mané,2022,Liverpool,Premier League,2819,87.65663857,3.50045233,SEN,FW,29,89,https://fbref.com/en/players/c691bfe2/Sadio-Mane
+Joël Matip,2022,Liverpool,Premier League,2790,83.03468885,1.766548934,CMR,DF,29,83,https://fbref.com/en/players/b217ef29/Joel-Matip
+Mohamed Salah,2022,Liverpool,Premier League,2762,90.13389432,4.429783547,EGY,FW,29,89,https://fbref.com/en/players/e342ad68/Mohamed-Salah
+Jordan Henderson,2022,Liverpool,Premier League,2597,82.31353054,1.49600968,ENG,MF,31,84,https://fbref.com/en/players/935e6b8f/Jordan-Henderson
+Andrew Robertson,2022,Liverpool,Premier League,2537,84.39335631,2.276246849,SCO,DF,27,87,https://fbref.com/en/players/2e4f5f03/Andrew-Robertson
+Diogo Jota,2022,Liverpool,Premier League,2364,85.19234302,2.575983074,POR,FW,24,82,https://fbref.com/en/players/178ae8f8/Diogo-Jota
+Fabinho,2022,Liverpool,Premier League,2314,81.11434496,1.046140667,BRA,MF,27,86,https://fbref.com/en/players/7f3b388c/Fabinho
+Thiago Alcántara,2022,Liverpool,Premier League,1534,84.88515742,2.460743795,ESP,MF,30,86,https://fbref.com/en/players/77e84962/Thiago-Alcantara
+Naby Keïta,2022,Liverpool,Premier League,1173,80.21147756,0.707434073,GUI,MF,26,80,https://fbref.com/en/players/f25c8e3a/Naby-Keita
+Ibrahima Konaté,2022,Liverpool,Premier League,990,77.32976317,-0.373627961,FRA,DF,22,78,https://fbref.com/en/players/5ed9b537/Ibrahima-Konate
+Luis Díaz,2022,Liverpool,Premier League,958,85.32550294,2.625937413,COL,FW,24,80,https://fbref.com/en/players/4a1a9578/Luis-Diaz
+Roberto Firmino,2022,Liverpool,Premier League,990,85.44965402,2.672512126,BRA,FW,29,85,https://fbref.com/en/players/4c370d81/Roberto-Firmino
+Curtis Jones,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Kostas Tsimikas,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+James Milner,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Alex Oxlade-Chamberlain,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Harvey Elliott,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Joe Gomez,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Caoimhín Kelleher,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,67,NA
+Takumi Minamino,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Tyler Morton,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,57,NA
+Divock Origi,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Kaide Gordon,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,58,NA
+Neco Williams,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Adrián,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Owen Beck,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Conor Bradley,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Nathaniel Phillips,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marcelo Pitaluga,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jarrell Quansah,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Rhys Williams,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Ben Woodburn,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Edouard Mendy,2022,Chelsea,Premier League,3060,83.67536683,2.006896362,SEN,GK,29,83,https://fbref.com/en/players/33887998/Edouard-Mendy
+Antonio Rüdiger,2022,Chelsea,Premier League,3035,83.46656822,1.928566516,GER,DF,28,83,https://fbref.com/en/players/18b896d6/Antonio-Rudiger
+Thiago Silva,2022,Chelsea,Premier League,2650,81.6422501,1.244181876,BRA,DF,36,85,https://fbref.com/en/players/86e7deaf/Thiago-Silva
+Mason Mount,2022,Chelsea,Premier League,2363,84.44487408,2.295573504,ENG,"MF,FW",22,83,https://fbref.com/en/players/9674002f/Mason-Mount
+Jorginho,2022,Chelsea,Premier League,2273,82.74600916,1.658252062,ITA,MF,29,85,https://fbref.com/en/players/45db685d/Jorginho
+Marcos Alonso,2022,Chelsea,Premier League,2167,80.98855218,0.998950078,ESP,DF,30,79,https://fbref.com/en/players/f4290206/Marcos-Alonso
+César Azpilicueta,2022,Chelsea,Premier League,2070,81.56533046,1.215325824,ESP,DF,31,83,https://fbref.com/en/players/53cad200/Cesar-Azpilicueta
+Reece James,2022,Chelsea,Premier League,1864,87.35088217,3.385749211,ENG,DF,21,81,https://fbref.com/en/players/1265a93a/Reece-James
+Kai Havertz,2022,Chelsea,Premier League,1809,83.62307671,1.987279961,GER,"FW,MF",22,84,https://fbref.com/en/players/fed7cb61/Kai-Havertz
+N'Golo Kanté,2022,Chelsea,Premier League,1773,83.1649972,1.815433519,FRA,MF,30,90,https://fbref.com/en/players/b9fbae28/NGolo-Kante
+Andreas Christensen,2022,Chelsea,Premier League,1496,79.46901717,0.428903436,DEN,DF,25,80,https://fbref.com/en/players/1cb49278/Andreas-Christensen
+Trevoh Chalobah,2022,Chelsea,Premier League,1449,82.97615375,1.74458976,ENG,DF,22,73,https://fbref.com/en/players/5515376c/Trevoh-Chalobah
+Romelu Lukaku,2022,Chelsea,Premier League,1589,78.33122659,0.002066481,BEL,FW,28,88,https://fbref.com/en/players/5eae500a/Romelu-Lukaku
+Mateo Kovačić,2022,Chelsea,Premier League,1558,82.71696057,1.647354618,CRO,MF,27,83,https://fbref.com/en/players/79c0821a/Mateo-Kovacic
+Timo Werner,2022,Chelsea,Premier League,1283,79.1190581,0.297617887,GER,"FW,MF",25,84,https://fbref.com/en/players/49fe9070/Timo-Werner
+Hakim Ziyech,2022,Chelsea,Premier League,1319,81.26837411,1.103924001,MAR,"FW,MF",28,84,https://fbref.com/en/players/6622454d/Hakim-Ziyech
+Ruben Loftus-Cheek,2022,Chelsea,Premier League,1394,81.11952504,1.048083951,ENG,"MF,DF",25,75,https://fbref.com/en/players/e97fd090/Ruben-Loftus-Cheek
+Christian Pulisic,2022,Chelsea,Premier League,1290,77.67012951,-0.245941078,USA,"MF,FW",22,82,https://fbref.com/en/players/1bf33a9a/Christian-Pulisic
+Callum Hudson-Odoi,2022,Chelsea,Premier League,962,78.61687699,0.10922693,ENG,"FW,MF",20,77,https://fbref.com/en/players/15f3ec41/Callum-Hudson-Odoi
+Malang Sarr,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Ben Chilwell,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Saúl Ñíguez,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Kepa Arrizabalaga,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Ross Barkley,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Kenedy,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Emerson Palmieri,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Tammy Abraham,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marcus Bettinelli,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Lewis Hall,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Harvey Vale,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kurt Zouma,2022,West Ham,Premier League,2078,77.47294067,-0.319915575,FRA,DF,26,81,https://fbref.com/en/players/ce4246f5/Kurt-Zouma
+Hugo Lloris,2022,Tottenham,Premier League,3420,84.19555042,2.202040869,FRA,GK,34,87,https://fbref.com/en/players/8f62b6ee/Hugo-Lloris
+Harry Kane,2022,Tottenham,Premier League,3232,86.78121889,3.172042625,ENG,FW,28,90,https://fbref.com/en/players/21a66f6a/Harry-Kane
+Pierre Højbjerg,2022,Tottenham,Premier League,3196,83.23072326,1.840090353,DEN,MF,25,83,https://fbref.com/en/players/8b04d6c1/Pierre-Hojbjerg
+Eric Dier,2022,Tottenham,Premier League,3071,81.90873415,1.344152154,ENG,DF,27,79,https://fbref.com/en/players/ac861941/Eric-Dier
+Son Heung-min,2022,Tottenham,Premier League,3006,86.69344732,3.139115517,KOR,"FW,MF",29,89,https://fbref.com/en/players/92e7e919/Son-Heung-min
+Ben Davies,2022,Tottenham,Premier League,2538,78.76154972,0.163500246,WAL,DF,28,73,https://fbref.com/en/players/44781702/Ben-Davies
+Emerson,2022,Tottenham,Premier League,2286,78.77324774,0.167888704,BRA,DF,22,79,https://fbref.com/en/players/df8b52a5/Emerson
+Sergio Reguilón,2022,Tottenham,Premier League,1916,79.78023294,0.545654615,ESP,DF,24,81,https://fbref.com/en/players/3353737a/Sergio-Reguilon
+Cristian Romero,2022,Tottenham,Premier League,1844,79.8721595,0.580140446,ARG,DF,23,82,https://fbref.com/en/players/a3d94a58/Cristian-Romero
+Lucas Moura,2022,Tottenham,Premier League,1775,78.48113392,0.058303535,BRA,"FW,MF",28,81,https://fbref.com/en/players/2b622f01/Lucas-Moura
+Davinson Sánchez,2022,Tottenham,Premier League,1631,80.17862539,0.695109732,COL,DF,25,79,https://fbref.com/en/players/da7b447d/Davinson-Sanchez
+Rodrigo Bentancur,2022,Tottenham,Premier League,1361,83.92052704,2.098867098,URU,MF,24,78,https://fbref.com/en/players/3b8674e6/Rodrigo-Bentancur
+Oliver Skipp,2022,Tottenham,Premier League,1350,78.01401517,-0.11693394,ENG,MF,20,75,https://fbref.com/en/players/6250083a/Oliver-Skipp
+Dejan Kulusevski,2022,Tottenham,Premier League,1261,83.59504237,1.976763006,SWE,"MF,FW",21,81,https://fbref.com/en/players/df3cda47/Dejan-Kulusevski
+Ryan Sessegnon,2022,Tottenham,Premier League,1047,78.27999772,-0.017151795,ENG,DF,21,75,https://fbref.com/en/players/6aa3e78b/Ryan-Sessegnon
+Japhet Tanganga,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Harry Winks,2022,Tottenham,Premier League,912,78.74421528,0.156997309,ENG,MF,25,77,https://fbref.com/en/players/2f7acede/Harry-Winks
+Matt Doherty,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Dele Alli,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,80,NA
+Tanguy Ndombele,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Steven Bergwijn,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,80,NA
+Giovani Lo Celso,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,81,NA
+Bryan,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Joe Rodon,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Dane Scarlett,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Brandon Austin,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jamie Bowden,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Matthew Craig,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Alfie Devine,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Pierluigi Gollini,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marcel Lavinier,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dilan Markanday,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Tobi Omole,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Moussa Sissoko,2022,Watford,Premier League,3220,77.73284835,-0.222412391,FRA,MF,31,78,https://fbref.com/en/players/2acd49b9/Moussa-Sissoko
+Harvey White,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Bukayo Saka,2022,Arsenal,Premier League,2978,82.33208757,1.502971265,ENG,"FW,MF",19,80,https://fbref.com/en/players/bc7dc64d/Bukayo-Saka
+Gabriel Dos Santos,2022,Arsenal,Premier League,3063,81.14153184,1.056339703,BRA,DF,23,79,https://fbref.com/en/players/67ac5bb8/Gabriel-Dos-Santos
+Aaron Ramsdale,2022,Arsenal,Premier League,3060,78.9173139,0.221934468,ENG,GK,23,74,https://fbref.com/en/players/466fb2c5/Aaron-Ramsdale
+Ben White,2022,Arsenal,Premier League,2880,78.7550712,0.161069859,ENG,DF,23,76,https://fbref.com/en/players/35e413f1/Ben-White
+Martin Ødegaard,2022,Arsenal,Premier League,2785,80.83076227,0.939755911,NOR,MF,22,82,https://fbref.com/en/players/79300479/Martin-Odegaard
+Granit Xhaka,2022,Arsenal,Premier League,2327,80.11228981,0.67022424,SUI,"MF,DF",28,79,https://fbref.com/en/players/e61b8aee/Granit-Xhaka
+Thomas Partey,2022,Arsenal,Premier League,2028,80.4823078,0.809034803,GHA,MF,28,83,https://fbref.com/en/players/529f49ab/Thomas-Partey
+Kieran Tierney,2022,Arsenal,Premier League,1915,77.56523484,-0.285291834,SCO,DF,24,80,https://fbref.com/en/players/fce2302c/Kieran-Tierney
+Emile Smith Rowe,2022,Arsenal,Premier League,1921,78.15035528,-0.065786566,ENG,"MF,FW",21,76,https://fbref.com/en/players/17695062/Emile-Smith-Rowe
+Martinelli,2022,Arsenal,Premier League,1860,79.4879304,0.435998649,BRA,"FW,MF",20,76,https://fbref.com/en/players/48a5a5d6/Martinelli
+Alexandre Lacazette,2022,Arsenal,Premier League,1782,77.47174081,-0.320365697,FRA,"FW,MF",30,82,https://fbref.com/en/players/9dbb75ca/Alexandre-Lacazette
+Takehiro Tomiyasu,2022,Arsenal,Premier League,1679,76.33535423,-0.746675948,JPN,DF,22,75,https://fbref.com/en/players/b3af9be1/Takehiro-Tomiyasu
+Cédric Soares,2022,Arsenal,Premier League,1486,77.09780513,-0.460645964,POR,DF,29,76,https://fbref.com/en/players/839c14e1/Cedric-Soares
+Nuno Tavares,2022,Arsenal,Premier League,1176,76.8522613,-0.552760615,POR,DF,21,70,https://fbref.com/en/players/a65c844b/Nuno-Tavares
+Albert Sambi Lokonga,2022,Arsenal,Premier League,1134,76.36250726,-0.736489614,BEL,MF,21,73,https://fbref.com/en/players/1b4f1169/Albert-Sambi-Lokonga
+Pierre-Emerick Aubameyang,2022,Arsenal,Premier League,1037,77.1378403,-0.445626951,GAB,FW,32,85,https://fbref.com/en/players/d5dd5f1f/Pierre-Emerick-Aubameyang
+Rob Holding,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Eddie Nketiah,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Mohamed Elneny,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Nicolas Pépé,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,81,NA
+Bernd Leno,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,83,NA
+Ainsley Maitland-Niles,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Pablo Marí,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Calum Chambers,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Sead Kolašinac,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Folarin Balogun,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,64,NA
+Reiss Nelson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Ryan Alebiousu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Zach Awe,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Miguel Azeez,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Héctor Bellerín,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Mika Biereth,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marcelo Flores,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Omari Hutchinson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Karl Jakob Hein,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Alex Kirk,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Mazeed Ogungbo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Arthur Okonkwo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Salah Oulad M'Hand,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Charlie Patino,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Zak Swanson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+David de Gea,2022,Manchester Utd,Premier League,3420,82.0512795,1.397627396,ESP,GK,30,84,https://fbref.com/en/players/7ba6d84e/David-de-Gea
+Bruno Fernandes,2022,Manchester Utd,Premier League,3111,84.07739066,2.157713771,POR,MF,26,88,https://fbref.com/en/players/507c7bdf/Bruno-Fernandes
+Harry Maguire,2022,Manchester Utd,Premier League,2515,79.16350706,0.314292709,ENG,DF,28,84,https://fbref.com/en/players/d8931174/Harry-Maguire
+Scott McTominay,2022,Manchester Utd,Premier League,2387,79.06202639,0.276222698,SCO,MF,24,80,https://fbref.com/en/players/d93c2511/Scott-McTominay
+Cristiano Ronaldo,2022,Manchester Utd,Premier League,2456,85.19734691,2.57786026,POR,FW,36,91,https://fbref.com/en/players/dea698d9/Cristiano-Ronaldo
+Victor Lindelöf,2022,Manchester Utd,Premier League,2355,78.89075349,0.211970451,SWE,DF,27,80,https://fbref.com/en/players/f5deef4c/Victor-Lindelof
+Fred,2022,Manchester Utd,Premier League,2028,80.49114098,0.812348533,BRA,MF,28,81,https://fbref.com/en/players/b853e0ad/Fred
+Jadon Sancho,2022,Manchester Utd,Premier League,1900,78.22176777,-0.038996497,ENG,"FW,MF",21,87,https://fbref.com/en/players/dbf053da/Jadon-Sancho
+Raphaël Varane,2022,Manchester Utd,Premier League,1831,77.77426612,-0.206874704,FRA,DF,28,86,https://fbref.com/en/players/9f8e9423/Raphael-Varane
+Aaron Wan-Bissaka,2022,Manchester Utd,Premier League,1793,79.17763056,0.319591077,ENG,DF,23,83,https://fbref.com/en/players/9e525177/Aaron-Wan-Bissaka
+Diogo Dalot,2022,Manchester Utd,Premier League,1801,76.71093987,-0.605776704,POR,DF,22,76,https://fbref.com/en/players/d9565625/Diogo-Dalot
+Luke Shaw,2022,Manchester Utd,Premier League,1601,79.9657388,0.615246294,ENG,DF,26,84,https://fbref.com/en/players/9c94165b/Luke-Shaw
+Alex Telles,2022,Manchester Utd,Premier League,1660,76.94697915,-0.517227644,BRA,DF,28,82,https://fbref.com/en/players/e73c9bb2/Alex-Telles
+Nemanja Matić,2022,Manchester Utd,Premier League,1382,79.01115104,0.257137044,SRB,MF,32,79,https://fbref.com/en/players/eb7822d7/Nemanja-Matic
+Paul Pogba,2022,Manchester Utd,Premier League,1349,86.09681851,2.915292935,FRA,"MF,FW",28,87,https://fbref.com/en/players/867239d3/Paul-Pogba
+Mason Greenwood,2022,Manchester Utd,Premier League,1271,81.7472019,1.283554066,ENG,"FW,MF",19,78,https://fbref.com/en/players/58eee997/Mason-Greenwood
+Anthony Elanga,2022,Manchester Utd,Premier League,1214,77.3972319,-0.348317373,SWE,FW,19,65,https://fbref.com/en/players/2fba6108/Anthony-Elanga
+Marcus Rashford,2022,Manchester Utd,Premier League,1235,74.96822399,-1.259548634,ENG,"FW,MF",23,85,https://fbref.com/en/players/a1d5bd30/Marcus-Rashford
+Edinson Cavani,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,85,NA
+Eric Bailly,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Jesse Lingard,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Juan Mata,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Anthony Martial,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,81,NA
+Phil Jones,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Daniel James,2022,Leeds United,Premier League,2366,76.11480577,-0.829413697,WAL,"FW,MF",23,77,https://fbref.com/en/players/c931d9f9/Daniel-James
+Hannibal Mejbri,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,62,NA
+Donny van de Beek,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,81,NA
+Shola Shoretire,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,62,NA
+Alejandro Garnacho,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Amad Diallo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Álvaro Fernández,2022,Brentford,Premier League,1080,78.46306312,0.051524355,ESP,GK,23,73,https://fbref.com/en/players/f127d782/Alvaro-Fernandez
+Tom Heaton,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dean Henderson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Andreas Pereira,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Charlie Savage,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Brandon Williams,2022,Norwich City,Premier League,2120,75.29191676,-1.138116764,ENG,DF,20,75,https://fbref.com/en/players/5e74d6c8/Brandon-Williams
+Łukasz Fabiański,2022,West Ham,Premier League,3330,82.67970877,1.633379775,POL,GK,36,82,https://fbref.com/en/players/9328b835/Lukasz-Fabianski
+Declan Rice,2022,West Ham,Premier League,3179,81.66053349,1.251040808,ENG,MF,22,82,https://fbref.com/en/players/1c7012b8/Declan-Rice
+Tomáš Souček,2022,West Ham,Premier League,3062,78.01537819,-0.116422608,CZE,MF,26,82,https://fbref.com/en/players/6613c819/Tomas-Soucek
+Jarrod Bowen,2022,West Ham,Premier League,2983,81.85575389,1.324276853,ENG,FW,24,78,https://fbref.com/en/players/79c84d1c/Jarrod-Bowen
+Michail Antonio,2022,West Ham,Premier League,2971,80.75837277,0.91259932,JAM,FW,31,79,https://fbref.com/en/players/ac05f970/Michail-Antonio
+Pablo Fornals,2022,West Ham,Premier League,2795,79.75480632,0.536115935,ESP,"FW,MF",25,79,https://fbref.com/en/players/82927de4/Pablo-Fornals
+Aaron Cresswell,2022,West Ham,Premier League,2726,80.11421298,0.670945707,ENG,DF,31,79,https://fbref.com/en/players/4f974391/Aaron-Cresswell
+Craig Dawson,2022,West Ham,Premier League,2754,78.07849538,-0.092744483,ENG,DF,31,77,https://fbref.com/en/players/3e9e06cb/Craig-Dawson
+Saïd Benrahma,2022,West Ham,Premier League,2168,78.44716554,0.045560453,ALG,"FW,MF",25,77,https://fbref.com/en/players/5a04fd92/Said-Benrahma
+Vladimír Coufal,2022,West Ham,Premier League,2209,75.21402814,-1.167336327,CZE,DF,28,80,https://fbref.com/en/players/fdf3cb77/Vladimir-Coufal
+Manuel Lanzini,2022,West Ham,Premier League,1786,79.2619651,0.351228796,ARG,"MF,FW",28,77,https://fbref.com/en/players/26f6dca8/Manuel-Lanzini
+Ben Johnson,2022,West Ham,Premier League,1397,75.47819042,-1.068237049,ENG,DF,21,68,https://fbref.com/en/players/9319781b/Ben-Johnson
+Angelo Ogbonna,2022,West Ham,Premier League,921,76.52150641,-0.676841806,ITA,DF,33,80,https://fbref.com/en/players/74b2cd7e/Angelo-Ogbonna
+Issa Diop,2022,West Ham,Premier League,963,75.51681401,-1.053747586,FRA,DF,24,77,https://fbref.com/en/players/a712ca2b/Issa-Diop
+Arthur Masuaku,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Nikola Vlašić,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,80,NA
+Mark Noble,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Ryan Fredericks,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Andriy Yarmolenko,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Alphonse Areola,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Harrison Ashby,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,59,NA
+Sonny Perkins,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,57,NA
+Daniel Chesters,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,56,NA
+Alex Král,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Ajibola Alese,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jamal Baptiste,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Conor Coventry,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Pierre Ekwah Elimby,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Armstrong Okoflex,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Darren Randolph,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kasper Schmeichel,2022,Leicester City,Premier League,3330,83.10702244,1.793684554,DEN,GK,34,85,https://fbref.com/en/players/53af52f3/Kasper-Schmeichel
+Youri Tielemans,2022,Leicester City,Premier League,2631,83.21055984,1.832526138,BEL,MF,24,84,https://fbref.com/en/players/56f7a928/Youri-Tielemans
+Çağlar Söyüncü,2022,Leicester City,Premier League,2497,80.36283346,0.764214551,TUR,DF,25,80,https://fbref.com/en/players/21166ff4/Caglar-Soyuncu
+James Maddison,2022,Leicester City,Premier League,2459,82.5071894,1.568659917,ENG,"MF,FW",24,82,https://fbref.com/en/players/ee38d9c5/James-Maddison
+Harvey Barnes,2022,Leicester City,Premier League,2101,80.59168376,0.850066696,ENG,"FW,MF",23,81,https://fbref.com/en/players/3ea50f67/Harvey-Barnes
+Daniel Amartey,2022,Leicester City,Premier League,2123,77.79331882,-0.199727171,GHA,DF,26,76,https://fbref.com/en/players/1a4ef233/Daniel-Amartey
+Kiernan Dewsbury Hall,2022,Leicester City,Premier League,2105,77.23242228,-0.410144954,ENG,MF,22,71,https://fbref.com/en/players/5c74c0f5/Kiernan-Dewsbury-Hall
+Timothy Castagne,2022,Leicester City,Premier League,2127,76.32522867,-0.750474507,BEL,DF,25,79,https://fbref.com/en/players/197640fd/Timothy-Castagne
+Luke Thomas,2022,Leicester City,Premier League,1912,76.54010952,-0.669862933,ENG,DF,20,71,https://fbref.com/en/players/fc027d02/Luke-Thomas
+Jamie Vardy,2022,Leicester City,Premier League,1806,79.1006364,0.290707069,ENG,FW,34,86,https://fbref.com/en/players/45963054/Jamie-Vardy
+Wilfred Ndidi,2022,Leicester City,Premier League,1618,77.33410216,-0.372000208,NGA,"MF,DF",24,85,https://fbref.com/en/players/6b47c5db/Wilfred-Ndidi
+Ademola Lookman,2022,Leicester City,Premier League,1453,80.75971384,0.913102417,NGA,"FW,MF",23,77,https://fbref.com/en/players/7c104bb7/Ademola-Lookman
+Jonny Evans,2022,Leicester City,Premier League,1348,79.4676581,0.428393588,NIR,DF,33,80,https://fbref.com/en/players/f8fcd2a5/Jonny-Evans
+Kelechi Iheanacho,2022,Leicester City,Premier League,1264,77.45344335,-0.327229905,NGA,FW,24,78,https://fbref.com/en/players/c92e1a31/Kelechi-Iheanacho
+Patson Daka,2022,Leicester City,Premier League,1159,77.59767494,-0.27312208,ZAM,FW,22,77,https://fbref.com/en/players/ca45605e/Patson-Daka
+Ricardo Pereira,2022,Leicester City,Premier League,991,80.57187304,0.842634796,POR,DF,27,84,https://fbref.com/en/players/75a72a99/Ricardo-Pereira
+Boubakary Soumaré,2022,Leicester City,Premier League,1102,74.12033409,-1.577630669,FRA,MF,22,78,https://fbref.com/en/players/ae59b359/Boubakary-Soumare
+Nampalys Mendy,2022,Leicester City,Premier League,1032,80.31599142,0.746641973,SEN,MF,29,75,https://fbref.com/en/players/1598599e/Nampalys-Mendy
+Marc Albrighton,2022,Leicester City,Premier League,1132,72.65074324,-2.128940987,ENG,"FW,DF",31,76,https://fbref.com/en/players/b827d5b3/Marc-Albrighton
+James Justin,2022,Leicester City,Premier League,998,78.09498578,-0.086558184,ENG,DF,23,77,https://fbref.com/en/players/fb614c44/James-Justin
+Wesley Fofana,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Jannik Vestergaard,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Ayoze Pérez,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Ryan Bertrand,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Hamza Choudhury,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Danny Ward,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Lewis Brunt,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,55,NA
+Kasey McAteer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,60,NA
+Vontae Daley Campbell,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Eldin Jakupović,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Benjamin Nelson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dennis Praet,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Robert Sánchez,2022,Brighton,Premier League,3329,79.22981761,0.339168813,ESP,GK,23,76,https://fbref.com/en/players/6a713852/Robert-Sanchez
+Marc Cucurella,2022,Brighton,Premier League,3089,79.6441,0.494584965,ESP,DF,23,81,https://fbref.com/en/players/1daec722/Marc-Cucurella
+Joël Veltman,2022,Brighton,Premier League,2874,77.84621322,-0.179884076,NED,DF,29,77,https://fbref.com/en/players/dad4b285/Joel-Veltman
+Leandro Trossard,2022,Brighton,Premier League,2805,80.2920996,0.737679065,BEL,"FW,MF",26,77,https://fbref.com/en/players/38ceb24a/Leandro-Trossard
+Lewis Dunk,2022,Brighton,Premier League,2573,79.69626551,0.514154616,ENG,DF,29,78,https://fbref.com/en/players/282f75f3/Lewis-Dunk
+Neal Maupay,2022,Brighton,Premier League,2276,77.39568739,-0.348896792,FRA,FW,24,77,https://fbref.com/en/players/4bcf39f6/Neal-Maupay
+Yves Bissouma,2022,Brighton,Premier League,2111,79.99086903,0.624673786,MLI,MF,24,79,https://fbref.com/en/players/6c203af0/Yves-Bissouma
+Pascal Groß,2022,Brighton,Premier League,2038,80.06062531,0.65084254,GER,"MF,DF",30,76,https://fbref.com/en/players/8aec0537/Pascal-Gross
+Alexis Mac Allister,2022,Brighton,Premier League,2123,77.97120117,-0.132995415,ARG,"MF,FW",22,75,https://fbref.com/en/players/83d074ff/Alexis-Mac-Allister
+Jakub Moder,2022,Brighton,Premier League,1701,75.4059517,-1.095337074,POL,"MF,FW",22,70,https://fbref.com/en/players/f230bc30/Jakub-Moder
+Adam Lallana,2022,Brighton,Premier League,1561,78.7840444,0.171939022,ENG,MF,33,75,https://fbref.com/en/players/99813635/Adam-Lallana
+Solly March,2022,Brighton,Premier League,1746,74.90010021,-1.285104958,ENG,"DF,FW",27,75,https://fbref.com/en/players/bb5fbd2b/Solly-March
+Tariq Lamptey,2022,Brighton,Premier League,1561,74.91404038,-1.279875369,ENG,"DF,FW",20,74,https://fbref.com/en/players/f4e433d4/Tariq-Lamptey
+Adam Webster,2022,Brighton,Premier League,1434,76.44855416,-0.704209509,ENG,DF,26,75,https://fbref.com/en/players/c40b6180/Adam-Webster
+Danny Welbeck,2022,Brighton,Premier League,1478,76.16781424,-0.809527814,ENG,FW,30,73,https://fbref.com/en/players/ce5143da/Danny-Welbeck
+Shane Duffy,2022,Brighton,Premier League,1436,77.82611407,-0.18742418,IRL,DF,29,72,https://fbref.com/en/players/7314bba4/Shane-Duffy
+Dan Burn,2022,Brighton,Premier League,1022,76.66030842,-0.624770863,ENG,DF,29,75,https://fbref.com/en/players/b2d31e83/Dan-Burn
+Dan Burn,2022,Newcastle Utd,Premier League,1440,76.54894244,-0.666549303,ENG,DF,29,75,https://fbref.com/en/players/b2d31e83/Dan-Burn
+Enock Mwepu,2022,Brighton,Premier League,996,77.8778701,-0.168008143,ZAM,"MF,FW",23,75,https://fbref.com/en/players/1d5cab82/Enock-Mwepu
+Moisés Caicedo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,64,NA
+Steven Alzate,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Aaron Connolly,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Jason Steele,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Jeremy Sarmiento,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,59,NA
+Taylor Richards,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Evan Ferguson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,55,NA
+Jürgen Locadia,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Florin Andone,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Michał Karbownik,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marc Leonard,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Thomas Mcgill,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Odeluga Offiah,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Haydon Roberts,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kjell Scherpen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Ed Turns,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Andi Zeqiri,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Conor Coady,2022,Wolves,Premier League,3361,79.27772212,0.357139971,ENG,DF,28,79,https://fbref.com/en/players/2928dca2/Conor-Coady
+José Sá,2022,Wolves,Premier League,3285,81.19682705,1.077083449,POR,GK,28,79,https://fbref.com/en/players/903b6e8b/Jose-Sa
+João Moutinho,2022,Wolves,Premier League,2970,80.21357302,0.708220175,POR,MF,34,80,https://fbref.com/en/players/f5a00fa4/Joao-Moutinho
+Romain Saïss,2022,Wolves,Premier League,2705,79.45590898,0.423985959,MAR,DF,31,78,https://fbref.com/en/players/9fbbcf39/Romain-Saiss
+Rúben Neves,2022,Wolves,Premier League,2661,80.46866291,0.803915987,POR,MF,24,82,https://fbref.com/en/players/44bfb6c5/Ruben-Neves
+Max Kilman,2022,Wolves,Premier League,2687,78.31320466,-0.004694365,ENG,DF,24,70,https://fbref.com/en/players/d0f72bf1/Max-Kilman
+Raúl Jiménez,2022,Wolves,Premier League,2631,79.44978262,0.421687683,MEX,FW,30,83,https://fbref.com/en/players/b561db50/Raul-Jimenez
+Nélson Semedo,2022,Wolves,Premier League,2131,76.61822284,-0.640559077,POR,DF,27,80,https://fbref.com/en/players/d04b94db/Nelson-Semedo
+Leander Dendoncker,2022,Wolves,Premier League,1950,76.87452711,-0.544407698,BEL,MF,26,77,https://fbref.com/en/players/5a7301ae/Leander-Dendoncker
+Rayan Aït Nouri,2022,Wolves,Premier League,1828,77.11652861,-0.453621935,FRA,DF,20,73,https://fbref.com/en/players/9b398aea/Rayan-Ait-Nouri
+Hwang Hee-chan,2022,Wolves,Premier League,1816,76.03040102,-0.861077756,KOR,"FW,MF",25,75,https://fbref.com/en/players/169fd162/Hwang-Hee-chan
+Fernando Marçal,2022,Wolves,Premier League,1449,77.53171987,-0.297864825,BRA,DF,32,75,https://fbref.com/en/players/9ae9eaea/Fernando-Marcal
+Francisco Trincão,2022,Wolves,Premier League,1336,75.21639172,-1.166449639,POR,"FW,MF",21,76,https://fbref.com/en/players/77e39b04/Francisco-Trincao
+Daniel Podence,2022,Wolves,Premier League,1484,76.02241084,-0.864075236,POR,"FW,MF",25,78,https://fbref.com/en/players/7fcc71d8/Daniel-Podence
+Adama Traoré,2022,Wolves,Premier League,1067,74.41806466,-1.465938403,ESP,FW,25,78,https://fbref.com/en/players/9a28eba4/Adama-Traore
+Jonny Castro,2022,Wolves,Premier League,1024,78.15117191,-0.065480213,ESP,DF,27,80,https://fbref.com/en/players/e28868f3/Jonny-Castro
+Willy Boly,2022,Wolves,Premier League,900,77.14856284,-0.44160444,CIV,DF,30,79,https://fbref.com/en/players/a4ac4b8f/Willy-Boly
+Fábio Silva,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Pedro Neto,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Toti Gomes,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Ki-Jana Hoever,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,65,NA
+Luke Cundle,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,54,NA
+Chiquinho,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+John Ruddy,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Chem Campbell,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,58,NA
+Morgan Gibbs-White,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Hugo Bueno,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Ryan John Giles,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Bruno Jordão,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Christian Marques,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Yerson Mosquera,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Louie Moulden,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dion Sanderson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+James Storer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Allan Saint-Maximin,2022,Newcastle Utd,Premier League,2804,78.48331755,0.059122712,FRA,"FW,MF",24,79,https://fbref.com/en/players/2b16cb1a/Allan-Saint-Maximin
+Joelinton,2022,Newcastle Utd,Premier League,2558,77.13576226,-0.446406519,BRA,"MF,FW",24,74,https://fbref.com/en/players/c17bfb65/Joelinton
+Martin Dúbravka,2022,Newcastle Utd,Premier League,2340,82.53492726,1.579065648,SVK,GK,32,81,https://fbref.com/en/players/3a949a25/Martin-Dubravka
+Fabian Schär,2022,Newcastle Utd,Premier League,2158,75.00284335,-1.246561339,SUI,DF,29,76,https://fbref.com/en/players/c8aa95da/Fabian-Schar
+Joe Willock,2022,Newcastle Utd,Premier League,2038,74.89917962,-1.285450313,ENG,MF,21,75,https://fbref.com/en/players/a3b03921/Joe-Willock
+Jamaal Lascelles,2022,Newcastle Utd,Premier League,2058,74.33999633,-1.49522538,ENG,DF,27,77,https://fbref.com/en/players/450ab6fc/Jamaal-Lascelles
+Jonjo Shelvey,2022,Newcastle Utd,Premier League,1983,73.41970409,-1.840468825,ENG,MF,29,75,https://fbref.com/en/players/3727dd3c/Jonjo-Shelvey
+Miguel Almirón,2022,Newcastle Utd,Premier League,1716,72.20166128,-2.29741204,PAR,"MF,FW",27,77,https://fbref.com/en/players/862a1c15/Miguel-Almiron
+Emil Krafth,2022,Newcastle Utd,Premier League,1634,73.56771095,-1.784944723,SWE,DF,26,73,https://fbref.com/en/players/77cf6852/Emil-Krafth
+Ryan Fraser,2022,Newcastle Utd,Premier League,1465,74.76766448,-1.334787621,SCO,"FW,MF",27,75,https://fbref.com/en/players/d56543a0/Ryan-Fraser
+Matt Targett,2022,Aston Villa,Premier League,1431,76.30552762,-0.757865265,ENG,DF,25,77,https://fbref.com/en/players/e514ab62/Matt-Targett
+Matt Targett,2022,Newcastle Utd,Premier League,1440,74.6373894,-1.383659724,ENG,DF,25,77,https://fbref.com/en/players/e514ab62/Matt-Targett
+Callum Wilson,2022,Newcastle Utd,Premier League,1386,73.18408518,-1.928860187,ENG,FW,29,79,https://fbref.com/en/players/c596fcb0/Callum-Wilson
+Sean Longstaff,2022,Newcastle Utd,Premier League,1464,73.69382997,-1.737631749,ENG,MF,23,72,https://fbref.com/en/players/a2b105e0/Sean-Longstaff
+Chris Wood,2022,Burnley,Premier League,1367,72.73166794,-2.098582455,NZL,FW,29,79,https://fbref.com/en/players/4e9a0555/Chris-Wood
+Chris Wood,2022,Newcastle Utd,Premier League,1327,69.17196177,-3.433990018,NZL,FW,29,79,https://fbref.com/en/players/4e9a0555/Chris-Wood
+Javier Manquillo,2022,Newcastle Utd,Premier League,1257,73.67635841,-1.744186126,ESP,DF,27,74,https://fbref.com/en/players/758dd7f0/Javier-Manquillo
+Matt Ritchie,2022,Newcastle Utd,Premier League,1337,73.22108507,-1.914979846,SCO,DF,31,74,https://fbref.com/en/players/71ef519e/Matt-Ritchie
+Jacob Murphy,2022,Newcastle Utd,Premier League,1473,72.34897438,-2.242148199,ENG,"FW,DF",26,72,https://fbref.com/en/players/de112b84/Jacob-Murphy
+Ciaran Clark,2022,Newcastle Utd,Premier League,1014,75.19740347,-1.173572994,IRL,DF,31,75,https://fbref.com/en/players/2b91cf8e/Ciaran-Clark
+Isaac Hayden,2022,Newcastle Utd,Premier League,1002,74.13973696,-1.57035177,ENG,"MF,DF",26,76,https://fbref.com/en/players/c951a6df/Isaac-Hayden
+Bruno Guimarães,2022,Newcastle Utd,Premier League,1034,82.12212258,1.424203855,BRA,MF,23,79,https://fbref.com/en/players/82518f62/Bruno-Guimaraes
+Karl Darlow,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Federico Fernández,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Kieran Trippier,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,84,NA
+Freddie Woodman,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Jamal Lewis,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Paul Dummett,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Jeff Hendrick,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Dwight Gayle,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Elliot Anderson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Lucas De Bolle,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Mark Gillespie,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Joe White,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Marc Guéhi,2022,Crystal Palace,Premier League,3222,81.11638989,1.046907814,ENG,DF,21,73,https://fbref.com/en/players/d0706b27/Marc-Guehi
+Tyrick Mitchell,2022,Crystal Palace,Premier League,3101,75.36281246,-1.111520564,ENG,DF,21,71,https://fbref.com/en/players/5cbd1eb0/Tyrick-Mitchell
+Conor Gallagher,2022,Crystal Palace,Premier League,2845,81.31151535,1.120108243,ENG,MF,21,74,https://fbref.com/en/players/c2731c10/Conor-Gallagher
+Joachim Andersen,2022,Crystal Palace,Premier League,2916,79.99184424,0.625039632,DEN,DF,25,77,https://fbref.com/en/players/e34fc66d/Joachim-Andersen
+Wilfried Zaha,2022,Crystal Palace,Premier League,2760,80.45472514,0.798687294,CIV,FW,28,82,https://fbref.com/en/players/b2bc3b1f/Wilfried-Zaha
+Vicente Guaita,2022,Crystal Palace,Premier League,2655,82.42996019,1.539687732,ESP,GK,34,80,https://fbref.com/en/players/ab13a5aa/Vicente-Guaita
+Joel Ward,2022,Crystal Palace,Premier League,2487,77.40479403,-0.345480475,ENG,DF,31,74,https://fbref.com/en/players/8a7ff278/Joel-Ward
+Jordan Ayew,2022,Crystal Palace,Premier League,2019,77.44261586,-0.331291789,GHA,FW,29,75,https://fbref.com/en/players/da052c14/Jordan-Ayew
+Cheikhou Kouyaté,2022,Crystal Palace,Premier League,1974,75.25787692,-1.150886655,SEN,MF,31,78,https://fbref.com/en/players/8d3c902d/Cheikhou-Kouyate
+Jeffrey Schlupp,2022,Crystal Palace,Premier League,1851,76.92943156,-0.523810541,GHA,"MF,FW",28,75,https://fbref.com/en/players/3312f911/Jeffrey-Schlupp
+Odsonne Édouard,2022,Crystal Palace,Premier League,1564,77.53341373,-0.297229381,FRA,FW,23,75,https://fbref.com/en/players/0562b7f1/Odsonne-Edouard
+James McArthur,2022,Crystal Palace,Premier League,1439,77.39992384,-0.347307506,SCO,MF,33,75,https://fbref.com/en/players/cee31595/James-McArthur
+Nathaniel Clyne,2022,Crystal Palace,Premier League,1351,73.79070938,-1.70128788,ENG,DF,30,75,https://fbref.com/en/players/0442183b/Nathaniel-Clyne
+Jean-Philippe Mateta,2022,Crystal Palace,Premier League,1145,75.95943118,-0.887701767,FRA,FW,24,75,https://fbref.com/en/players/50e6dc35/Jean-Philippe-Mateta
+Will Hughes,2022,Crystal Palace,Premier League,1053,76.30360813,-0.758585355,ENG,MF,26,76,https://fbref.com/en/players/a0666d3e/Will-Hughes
+Michael Olise,2022,Crystal Palace,Premier League,1141,78.56966417,0.091515252,FRA,"FW,MF",19,73,https://fbref.com/en/players/c4486bac/Michael-Olise
+Christian Benteke,2022,Crystal Palace,Premier League,1145,74.58919969,-1.401737874,BEL,FW,30,75,https://fbref.com/en/players/ab070c55/Christian-Benteke
+Luka Milivojević,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Jack Butland,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Eberechi Eze,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+James Tomkins,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Jaïro Riedewald,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Jesuran Rak Sakyi,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,61,NA
+Nathan Ferguson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Omotayo Adaramola,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Scott Banks,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Reece Hannam,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Martin Kelly,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Remi Matthews,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Robert Street,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Pontus Jansson,2022,Brentford,Premier League,3321,78.11297304,-0.079810344,SWE,DF,30,75,https://fbref.com/en/players/172e52d8/Pontus-Jansson
+Christian Nørgaard,2022,Brentford,Premier League,3054,80.82323857,0.936933431,DEN,MF,27,73,https://fbref.com/en/players/df0a4c90/Christian-Norgaard
+Bryan Mbeumo,2022,Brentford,Premier League,2905,79.1971693,0.326920948,FRA,FW,21,74,https://fbref.com/en/players/6afaebf2/Bryan-Mbeumo
+Rico Henry,2022,Brentford,Premier League,2776,75.90382568,-0.908561919,ENG,DF,24,74,https://fbref.com/en/players/8a3c1dc7/Rico-Henry
+Ivan Toney,2022,Brentford,Premier League,2909,78.95403897,0.235711711,ENG,FW,25,76,https://fbref.com/en/players/e09f279b/Ivan-Toney
+Ethan Pinnock,2022,Brentford,Premier League,2694,76.22545806,-0.787902994,JAM,DF,28,74,https://fbref.com/en/players/e541326e/Ethan-Pinnock
+Vitaly Janelt,2022,Brentford,Premier League,2298,76.35473659,-0.739404744,GER,MF,23,73,https://fbref.com/en/players/8449d35e/Vitaly-Janelt
+Sergi Canós,2022,Brentford,Premier League,2083,74.87799445,-1.293397833,ESP,DF,24,72,https://fbref.com/en/players/1137759d/Sergi-Canos
+David Raya,2022,Brentford,Premier League,2160,82.19638065,1.452061432,ESP,GK,25,74,https://fbref.com/en/players/98ea5115/David-Raya
+Kristoffer Ajer,2022,Brentford,Premier League,1995,75.50024926,-1.059961774,NOR,DF,23,75,https://fbref.com/en/players/a8c0acb7/Kristoffer-Ajer
+Mathias Jensen,2022,Brentford,Premier League,1601,75.7227968,-0.97647408,DEN,MF,25,74,https://fbref.com/en/players/0f134faf/Mathias-Jensen
+Yoane Wissa,2022,Brentford,Premier League,1284,73.84459434,-1.68107318,COD,"FW,MF",24,75,https://fbref.com/en/players/2500cef9/Yoane-Wissa
+Mads Roerslev,2022,Brentford,Premier League,1240,72.14783404,-2.317605082,DEN,DF,22,67,https://fbref.com/en/players/57c94db2/Mads-Roerslev
+Frank Onyeka,2022,Brentford,Premier League,1045,73.55920686,-1.788134996,NGA,MF,23,75,https://fbref.com/en/players/2944f86f/Frank-Onyeka
+Christian Eriksen,2022,Brentford,Premier League,939,81.36573647,1.14044905,DEN,MF,29,82,https://fbref.com/en/players/980522ec/Christian-Eriksen
+Shandon Baptiste,2022,Brentford,Premier League,910,70.38732103,-2.978053525,GRN,MF,23,66,https://fbref.com/en/players/2886c9b5/Shandon-Baptiste
+Mads Bech Sørensen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,68,NA
+Mathias Jørgensen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Saman Ghoddos,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Charlie Goode,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,67,NA
+Josh Dasilva,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Jonas Lössl,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Dominic Thompson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Marcus Forss,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,68,NA
+Mads Bidstrup,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,64,NA
+Tariqe Fosu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Finley Stevens,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,59,NA
+Nathan Young-Coombes,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,57,NA
+Matthew Cox,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Halil Dervişoğlu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Patrik Gunnarsson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Maxwell Haygarth,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Julian Jeanvier,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Edmond-Paris Maghoma,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Myles Peart-Harris,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Matty Cash,2022,Aston Villa,Premier League,3377,77.96975656,-0.133537353,POL,DF,23,78,https://fbref.com/en/players/2389cdc2/Matty-Cash
+Emiliano Martínez,2022,Aston Villa,Premier League,3240,81.7805007,1.296045962,ARG,GK,28,84,https://fbref.com/en/players/7956236f/Emiliano-Martinez
+Tyrone Mings,2022,Aston Villa,Premier League,3189,77.27617825,-0.3937301,ENG,DF,28,78,https://fbref.com/en/players/8397a50c/Tyrone-Mings
+John McGinn,2022,Aston Villa,Premier League,3090,79.58754962,0.473370346,SCO,MF,26,78,https://fbref.com/en/players/90f91999/John-McGinn
+Ollie Watkins,2022,Aston Villa,Premier League,2952,79.33734516,0.379507282,ENG,FW,25,78,https://fbref.com/en/players/aed3a70f/Ollie-Watkins
+Douglas Luiz,2022,Aston Villa,Premier League,2715,78.8655975,0.202533294,BRA,MF,23,77,https://fbref.com/en/players/6f7d826d/Douglas-Luiz
+Ezri Konsa,2022,Aston Villa,Premier League,2477,76.90385882,-0.533404038,ENG,DF,23,78,https://fbref.com/en/players/0313a347/Ezri-Konsa
+Jacob Ramsey,2022,Aston Villa,Premier League,2467,76.93258212,-0.522628624,ENG,MF,20,68,https://fbref.com/en/players/1544f145/Jacob-Ramsey
+Emi Buendía,2022,Aston Villa,Premier League,1899,80.71528231,0.896434132,ARG,"FW,MF",24,79,https://fbref.com/en/players/66b76d44/Emi-Buendia
+Danny Ings,2022,Aston Villa,Premier League,1898,76.95028374,-0.515987942,ENG,FW,29,81,https://fbref.com/en/players/07802f7f/Danny-Ings
+Philippe Coutinho,2022,Aston Villa,Premier League,1329,80.6614534,0.876240461,BRA,"MF,FW",29,82,https://fbref.com/en/players/0ef89a37/Philippe-Coutinho
+Lucas Digne,2022,Aston Villa,Premier League,1269,78.06694376,-0.097078019,FRA,DF,28,84,https://fbref.com/en/players/1b84dbe1/Lucas-Digne
+Lucas Digne,2022,Everton,Premier League,1170,74.58028409,-1.405082521,FRA,DF,28,84,https://fbref.com/en/players/1b84dbe1/Lucas-Digne
+Ashley Young,2022,Aston Villa,Premier League,1250,72.19038261,-2.30164318,ENG,"DF,FW",36,78,https://fbref.com/en/players/be927d03/Ashley-Young
+Marvelous Nakamba,2022,Aston Villa,Premier League,904,72.73689669,-2.096620914,ZIM,MF,27,75,https://fbref.com/en/players/de5b5570/Marvelous-Nakamba
+Leon Bailey,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,82,NA
+Axel Tuanzebe,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Kortney Hause,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Anwar El Ghazi,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Morgan Sanson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Carney Chukwuemeka,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Bertrand Traoré,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Tim Iroegbunam,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,56,NA
+Robin Olsen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Jed Steer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Cameron Archer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,58,NA
+Keinan Davis,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Trézéguet,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Jaden Philogene Bidace,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,60,NA
+Wesley Moraes,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Lamare Bogarde,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Benjamin Chrisene,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Josh Feeney,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Frederic Guilbert,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Conor Hourihane,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kaine Kessler,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Filip Marshall,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Tommi O'Reilly,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Aaron Ramsey,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Viljami Sinisalo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+James Ward-Prowse,2022,Southampton,Premier League,3215,80.49759861,0.814771082,ENG,MF,26,81,https://fbref.com/en/players/3515d404/James-Ward-Prowse
+Oriol Romeu,2022,Southampton,Premier League,2889,79.11250102,0.295158028,ESP,MF,29,78,https://fbref.com/en/players/4b511457/Oriol-Romeu
+Mohammed Salisu,2022,Southampton,Premier League,2972,77.46479446,-0.322971587,GHA,DF,22,76,https://fbref.com/en/players/0b33f6ad/Mohammed-Salisu
+Jan Bednarek,2022,Southampton,Premier League,2629,78.60974097,0.106549885,POL,DF,25,76,https://fbref.com/en/players/4115ce4e/Jan-Bednarek
+Kyle Walker-Peters,2022,Southampton,Premier League,2633,77.88739652,-0.164434349,ENG,DF,24,77,https://fbref.com/en/players/984a5a64/Kyle-Walker-Peters
+Valentino Livramento,2022,Southampton,Premier League,2202,75.95612295,-0.888942837,ENG,DF,18,62,https://fbref.com/en/players/afed6722/Valentino-Livramento
+Mohamed Elyounoussi,2022,Southampton,Premier League,2042,77.4799348,-0.317291756,NOR,"MF,FW",26,75,https://fbref.com/en/players/68dc0dac/Mohamed-Elyounoussi
+Che Adams,2022,Southampton,Premier League,2039,77.74368007,-0.218348921,SCO,FW,25,76,https://fbref.com/en/players/f2bf1b0f/Che-Adams
+Armando Broja,2022,Southampton,Premier League,1975,74.41206434,-1.468189394,ALB,FW,19,70,https://fbref.com/en/players/97220da2/Armando-Broja
+Nathan Redmond,2022,Southampton,Premier League,1833,76.09903628,-0.835329553,ENG,"MF,FW",27,76,https://fbref.com/en/players/ab651565/Nathan-Redmond
+Fraser Forster,2022,Southampton,Premier League,1710,77.9254818,-0.150146828,ENG,GK,33,75,https://fbref.com/en/players/c3e39f12/Fraser-Forster
+Romain Perraud,2022,Southampton,Premier League,1623,73.16746111,-1.935096629,FRA,DF,23,77,https://fbref.com/en/players/6dfd8f05/Romain-Perraud
+Alex McCarthy,2022,Southampton,Premier League,1530,76.18266753,-0.803955668,ENG,GK,31,75,https://fbref.com/en/players/36c2ca73/Alex-McCarthy
+Adam Armstrong,2022,Southampton,Premier League,1413,75.44868999,-1.079303999,ENG,FW,24,76,https://fbref.com/en/players/68c720b5/Adam-Armstrong
+Stuart Armstrong,2022,Southampton,Premier League,1473,75.3741676,-1.107260735,SCO,MF,29,77,https://fbref.com/en/players/97333cf5/Stuart-Armstrong
+Ibrahima Diallo,2022,Southampton,Premier League,1023,72.74518798,-2.093510473,FRA,MF,22,73,https://fbref.com/en/players/11ff3d56/Ibrahima-Diallo
+Nathan Tella,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Lyanco,2022,Southampton,Premier League,911,73.97208966,-1.633243892,BRA,DF,24,72,https://fbref.com/en/players/b5bf1770/Lyanco
+Jack Stephens,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Moussa Djenepo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Theo Walcott,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Yan Valery,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Shane Long,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Willy Caballero,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+William Smallbone,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Kgagelo Chauke,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Tyler Dibling,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Harry Lewis,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dynel Simeu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Thierry Small,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jordan Pickford,2022,Everton,Premier League,3150,80.26363001,0.726998826,ENG,GK,27,83,https://fbref.com/en/players/4806ec67/Jordan-Pickford
+Michael Keane,2022,Everton,Premier League,2792,76.42446691,-0.713245732,ENG,DF,28,80,https://fbref.com/en/players/c5b7c315/Michael-Keane
+Séamus Coleman,2022,Everton,Premier League,2656,76.42911674,-0.71150137,IRL,DF,32,78,https://fbref.com/en/players/0420d84f/Seamus-Coleman
+Abdoulaye Doucouré,2022,Everton,Premier League,2537,77.30706009,-0.382144917,MLI,MF,28,79,https://fbref.com/en/players/02b29014/Abdoulaye-Doucoure
+Richarlison,2022,Everton,Premier League,2523,77.87391539,-0.169491735,BRA,"FW,MF",24,82,https://fbref.com/en/players/fa031b34/Richarlison
+Demarai Gray,2022,Everton,Premier League,2338,77.33977884,-0.369870627,ENG,"MF,FW",25,75,https://fbref.com/en/players/4468ec10/Demarai-Gray
+Anthony Gordon,2022,Everton,Premier League,2285,74.89922628,-1.285432812,ENG,"MF,FW",20,67,https://fbref.com/en/players/2bd83368/Anthony-Gordon
+Allan,2022,Everton,Premier League,2183,75.63613044,-1.008986569,BRA,MF,30,83,https://fbref.com/en/players/cc700722/Allan
+Mason Holgate,2022,Everton,Premier League,2134,74.65253059,-1.377979575,ENG,DF,24,77,https://fbref.com/en/players/d0042ab9/Mason-Holgate
+Ben Godfrey,2022,Everton,Premier League,2029,74.55641216,-1.414037966,ENG,DF,23,77,https://fbref.com/en/players/9f7c837d/Ben-Godfrey
+Alex Iwobi,2022,Everton,Premier League,2035,75.26924298,-1.14662273,NGA,"MF,DF",25,77,https://fbref.com/en/players/6ca5ec4b/Alex-Iwobi
+Andros Townsend,2022,Everton,Premier League,1455,74.89469572,-1.287132431,ENG,MF,30,77,https://fbref.com/en/players/b28bbd58/Andros-Townsend
+Dominic Calvert-Lewin,2022,Everton,Premier League,1283,74.18354228,-1.553918405,ENG,FW,24,81,https://fbref.com/en/players/59e6e5bf/Dominic-Calvert-Lewin
+Vitaliy Mykolenko,2022,Everton,Premier League,1055,74.0583265,-1.600892536,UKR,DF,22,76,https://fbref.com/en/players/30d4a2e5/Vitaliy-Mykolenko
+Jonjoe Kenny,2022,Everton,Premier League,1018,72.58387309,-2.154027018,ENG,DF,24,74,https://fbref.com/en/players/099e666f/Jonjoe-Kenny
+Yerry Mina,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Salomón Rondón,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Fabian Delph,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+André Gomes,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Jarrad Branthwaite,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Asmir Begović,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Tom Davies,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Jean-Philippe Gbamin,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,77,NA
+Ellis Simms,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,65,NA
+Lewis Dobbin,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,57,NA
+Tyler Onyango,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,60,NA
+Isaac Price,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,60,NA
+Cenk Tosun,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Moise Kean,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,79,NA
+Nathan Broadhead,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Andy Lonergan,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Niels Nkounkou,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Nathan Patterson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Harry Tyrer,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Reece Welch,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Charlie Whitaker,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Illan Meslier,2022,Leeds United,Premier League,3384,78.40603181,0.030129318,FRA,GK,21,77,https://fbref.com/en/players/6b625ac2/Illan-Meslier
+Stuart Dallas,2022,Leeds United,Premier League,2919,78.34433804,0.006985183,NIR,"DF,MF",30,75,https://fbref.com/en/players/67ca8566/Stuart-Dallas
+Raphael Dias Belloli,2022,Leeds United,Premier League,2915,81.07421675,1.031086751,BRA,"FW,MF",24,82,https://fbref.com/en/players/3423f250/Raphael-Dias-Belloli
+Jack Harrison,2022,Leeds United,Premier League,2639,76.32703357,-0.749797404,ENG,"FW,MF",24,78,https://fbref.com/en/players/aa849a12/Jack-Harrison
+Diego Llorente,2022,Leeds United,Premier League,2340,76.71294162,-0.605025756,ESP,DF,27,77,https://fbref.com/en/players/bba30585/Diego-Llorente
+Rodrigo,2022,Leeds United,Premier League,2265,78.65655295,0.124111185,ESP,"MF,FW",30,79,https://fbref.com/en/players/1fb1c435/Rodrigo
+Luke Ayling,2022,Leeds United,Premier League,2272,77.63096032,-0.260635222,ENG,DF,29,76,https://fbref.com/en/players/420d7c7d/Luke-Ayling
+Mateusz Klich,2022,Leeds United,Premier League,2073,76.45861784,-0.700434165,POL,MF,31,75,https://fbref.com/en/players/282679b4/Mateusz-Klich
+Pascal Struijk,2022,Leeds United,Premier League,2055,76.90930613,-0.531360505,NED,DF,21,74,https://fbref.com/en/players/f4d296e4/Pascal-Struijk
+Liam Cooper,2022,Leeds United,Premier League,1814,75.2894064,-1.139058514,SCO,DF,29,75,https://fbref.com/en/players/dc64b8b3/Liam-Cooper
+Junior Firpo,2022,Leeds United,Premier League,1711,78.38779025,0.023286082,ESP,DF,24,78,https://fbref.com/en/players/24f59bb2/Junior-Firpo
+Kalvin Phillips,2022,Leeds United,Premier League,1596,77.46194466,-0.324040676,ENG,MF,25,81,https://fbref.com/en/players/4f565d77/Kalvin-Phillips
+Robin Koch,2022,Leeds United,Premier League,1574,74.00473198,-1.620998273,GER,"MF,DF",25,77,https://fbref.com/en/players/ea6bc03a/Robin-Koch
+Adam Forshaw,2022,Leeds United,Premier League,1530,75.36932512,-1.109077371,ENG,MF,29,71,https://fbref.com/en/players/9f1938ab/Adam-Forshaw
+Tyler Roberts,2022,Leeds United,Premier League,987,73.27525005,-1.894660098,WAL,"MF,FW",22,73,https://fbref.com/en/players/6c17e046/Tyler-Roberts
+Jamie Shackleton,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Patrick Bamford,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,78,NA
+Joe Gelhardt,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,66,NA
+Sam Greenwood,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,65,NA
+Lewis Bate,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Charlie Cresswell,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Cody Drameh,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,63,NA
+Leo Fuhr Hjelde,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,60,NA
+Crysencio Summerville,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,68,NA
+Kristoffer Klaesson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,64,NA
+Hélder Costa,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Liam McCarron,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,59,NA
+Stuart McKinstry,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,61,NA
+Nohan Kenneh,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Archie Gray,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jack Jenkins,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kris Moore,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Nick Pope,2022,Burnley,Premier League,3240,81.69042425,1.262254192,ENG,GK,29,83,https://fbref.com/en/players/4b40d9ca/Nick-Pope
+Dwight McNeil,2022,Burnley,Premier League,3107,77.02679969,-0.487283333,ENG,MF,21,77,https://fbref.com/en/players/fc15fb84/Dwight-McNeil
+James Tarkowski,2022,Burnley,Premier League,3106,75.76634551,-0.960136979,ENG,DF,28,81,https://fbref.com/en/players/15ea812b/James-Tarkowski
+Josh Brownhill,2022,Burnley,Premier League,2955,76.21668698,-0.791193426,ENG,MF,25,76,https://fbref.com/en/players/47369df8/Josh-Brownhill
+Charlie Taylor,2022,Burnley,Premier League,2731,76.73902718,-0.595239878,ENG,DF,27,76,https://fbref.com/en/players/cc2d7ad5/Charlie-Taylor
+Ashley Westwood,2022,Burnley,Premier League,2287,75.75233289,-0.965393748,ENG,MF,31,78,https://fbref.com/en/players/495945ef/Ashley-Westwood
+Ben Mee,2022,Burnley,Premier League,1839,75.79144294,-0.950721791,ENG,DF,31,79,https://fbref.com/en/players/8df7a2fb/Ben-Mee
+Maxwel Cornet,2022,Burnley,Premier League,1766,77.11985136,-0.452375421,CIV,"FW,MF",24,75,https://fbref.com/en/players/beb391dd/Maxwel-Cornet
+Matthew Lowton,2022,Burnley,Premier League,1772,73.79393537,-1.700077664,ENG,DF,32,76,https://fbref.com/en/players/9a9c05db/Matthew-Lowton
+Jack Cork,2022,Burnley,Premier League,1670,73.87999426,-1.667793064,ENG,MF,32,76,https://fbref.com/en/players/74e12f1e/Jack-Cork
+Connor Roberts,2022,Burnley,Premier League,1692,73.97271098,-1.633010807,WAL,DF,25,75,https://fbref.com/en/players/24fae784/Connor-Roberts
+Nathan Collins,2022,Burnley,Premier League,1670,75.64386758,-1.006084018,IRL,DF,20,71,https://fbref.com/en/players/a8c19eb8/Nathan-Collins
+Aaron Lennon,2022,Burnley,Premier League,1551,71.67621168,-2.494532063,ENG,MF,34,73,https://fbref.com/en/players/2ff964a0/Aaron-Lennon
+Wout Weghorst,2022,Burnley,Premier League,1450,75.68618605,-0.990208435,NED,FW,28,83,https://fbref.com/en/players/c4e87b8b/Wout-Weghorst
+Jay Rodriguez,2022,Burnley,Premier League,1382,73.72853613,-1.72461189,ENG,FW,32,74,https://fbref.com/en/players/4ab53cdb/Jay-Rodriguez
+Jóhann Berg Guðmundsson,2022,Burnley,Premier League,1102,72.45273082,-2.203224445,ISL,MF,30,75,https://fbref.com/en/players/f72293fc/Johann-Berg-Gudmundsson
+Ashley Barnes,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Erik Pieters,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Matěj Vydra,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Kevin Long,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Wayne Hennessey,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Dale Stephens,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Phil Bardsley,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Dara Costelloe,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Owen Dodgson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Anthony Gomez Mancini,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Joseph McGlynn,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Will Norris,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Lewis Richardson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Bobby Thomas,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Sam Waller,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Emmanuel Dennis,2022,Watford,Premier League,2581,79.06851529,0.278656982,NGA,"FW,MF",23,74,https://fbref.com/en/players/2c44a35d/Emmanuel-Dennis
+Craig Cathcart,2022,Watford,Premier League,2396,75.20813076,-1.1695487,NIR,DF,32,72,https://fbref.com/en/players/89e4b358/Craig-Cathcart
+Joshua King,2022,Watford,Premier League,2248,76.5883436,-0.651768136,NOR,FW,29,75,https://fbref.com/en/players/43458538/Joshua-King
+Ben Foster,2022,Watford,Premier League,2340,78.02349489,-0.113377663,ENG,GK,38,78,https://fbref.com/en/players/d0b3ceb9/Ben-Foster
+Kiko Femenía,2022,Watford,Premier League,2142,75.93471822,-0.896972722,ESP,DF,30,75,https://fbref.com/en/players/e5d01ecf/Kiko-Femenia
+Juraj Kucka,2022,Watford,Premier League,1920,75.78406251,-0.953490527,SVK,MF,34,77,https://fbref.com/en/players/5aaef9ef/Juraj-Kucka
+Ismaila Sarr,2022,Watford,Premier League,1861,75.59723155,-1.023579312,SEN,"FW,MF",23,78,https://fbref.com/en/players/bfdb33aa/Ismaila-Sarr
+Tom Cleverley,2022,Watford,Premier League,1616,73.63334094,-1.760323932,ENG,MF,31,74,https://fbref.com/en/players/6cdd8245/Tom-Cleverley
+Samir Santos,2022,Watford,Premier League,1673,75.61042838,-1.018628582,BRA,DF,26,73,https://fbref.com/en/players/92b4758e/Samir-Santos
+Hassane Kamara,2022,Watford,Premier League,1623,73.67262522,-1.745586615,CIV,DF,27,77,https://fbref.com/en/players/19a12bed/Hassane-Kamara
+Imran Louza,2022,Watford,Premier League,1416,74.94410677,-1.268596097,MAR,MF,22,75,https://fbref.com/en/players/e1df6989/Imran-Louza
+João Pedro,2022,Watford,Premier League,1644,76.27179501,-0.770519899,BRA,"FW,MF",19,71,https://fbref.com/en/players/e8832875/Joao-Pedro
+William Troost-Ekong,2022,Watford,Premier League,1390,74.10927481,-1.581779509,NGA,DF,27,73,https://fbref.com/en/players/7ed4921e/William-Troost-Ekong
+Adam Masina,2022,Watford,Premier League,1077,73.29166325,-1.888502764,MAR,DF,27,74,https://fbref.com/en/players/de0f152c/Adam-Masina
+Christian Kabasele,2022,Watford,Premier League,1193,74.45992814,-1.450233509,BEL,DF,30,75,https://fbref.com/en/players/914ab9a1/Christian-Kabasele
+Daniel Bachmann,2022,Watford,Premier League,1080,78.46265511,0.051371291,AUT,GK,27,70,https://fbref.com/en/players/1c0eea98/Daniel-Bachmann
+Cucho,2022,Watford,Premier League,1147,72.11469686,-2.330036344,COL,"FW,MF",22,75,https://fbref.com/en/players/71b47ab9/Cucho
+Jeremy Ngakia,2022,Watford,Premier League,903,69.6400543,-3.258387237,ENG,DF,20,69,https://fbref.com/en/players/3631ad41/Jeremy-Ngakia
+Edo Kayembe,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Ken Sema,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Danny Rose,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Francisco Sierralta,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Oghenekaro Etebo,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Ozan Tufan,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Samuel Kalu,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Nicolas Nkoulou,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,76,NA
+Dan Gosling,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Ashley Fletcher,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Troy Deeney,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Vincent Angelini,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kwadwo Baah,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Adrian Blake,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Kamil Conteh,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Tiago Çukur,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Rob Elliot,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Shaqai Forde,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jack Grieves,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+James Morris,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Teemu Pukki,2022,Norwich City,Premier League,3253,77.24765917,-0.404428904,FIN,FW,31,76,https://fbref.com/en/players/0745b37d/Teemu-Pukki
+Grant Hanley,2022,Norwich City,Premier League,2897,79.12283578,0.299035064,SCO,DF,29,75,https://fbref.com/en/players/e9254eec/Grant-Hanley
+Max Aarons,2022,Norwich City,Premier League,2881,76.9804713,-0.504663215,ENG,DF,21,75,https://fbref.com/en/players/774cf58b/Max-Aarons
+Kenny McLean,2022,Norwich City,Premier League,2706,73.8040399,-1.696286996,SCO,MF,29,73,https://fbref.com/en/players/471f16b3/Kenny-McLean
+Tim Krul,2022,Norwich City,Premier League,2610,80.16679804,0.690672754,NED,GK,33,77,https://fbref.com/en/players/f23f9d20/Tim-Krul
+Ben Gibson,2022,Norwich City,Premier League,2494,77.04290318,-0.48124218,ENG,DF,28,72,https://fbref.com/en/players/bcfb0142/Ben-Gibson
+Pierre Lees-Melou,2022,Norwich City,Premier League,2265,75.75590836,-0.96405243,FRA,MF,28,76,https://fbref.com/en/players/f5044e54/Pierre-Lees-Melou
+Milot Rashica,2022,Norwich City,Premier League,2229,73.9443797,-1.643639157,KVX,"FW,MF",25,77,https://fbref.com/en/players/6c6a3300/Milot-Rashica
+Billy Gilmour,2022,Norwich City,Premier League,1855,77.52131933,-0.301766538,SCO,MF,20,72,https://fbref.com/en/players/df10e27c/Billy-Gilmour
+Mathias Normann,2022,Norwich City,Premier League,1645,75.85436429,-0.927117136,NOR,MF,25,76,https://fbref.com/en/players/8996350d/Mathias-Normann
+Josh Sargent,2022,Norwich City,Premier League,1572,72.50732969,-2.182741925,USA,"FW,MF",21,71,https://fbref.com/en/players/a8d4428b/Josh-Sargent
+Dimitris Giannoulis,2022,Norwich City,Premier League,1169,75.62243124,-1.014125764,GRE,DF,25,74,https://fbref.com/en/players/112c495e/Dimitris-Giannoulis
+Sam Byram,2022,Norwich City,Premier League,1027,74.37945828,-1.480421411,ENG,DF,27,73,https://fbref.com/en/players/1bf811d4/Sam-Byram
+Ozan Kabak,2022,Norwich City,Premier League,922,76.25021013,-0.778617368,TUR,DF,21,76,https://fbref.com/en/players/2d61d13a/Ozan-Kabak
+Kieran Dowell,2022,Norwich City,Premier League,912,72.94447444,-2.018749065,ENG,"FW,MF",23,71,https://fbref.com/en/players/2f6ec02a/Kieran-Dowell
+Angus Gunn,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,72,NA
+Lukas Rupp,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,73,NA
+Adam Idah,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,67,NA
+Jakob Sørensen,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,70,NA
+Przemysław Płacheta,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,69,NA
+Todd Cantwell,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,75,NA
+Andrew Omobamidele,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,67,NA
+Christos Tzolis,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,74,NA
+Christoph Zimmermann,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,71,NA
+Tony Springett,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,62,NA
+Jon Rowe,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,58,NA
+Bali Mumba,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,65,NA
+Thomas Dickson-Peters,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Liam Gibbs,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Abu Kamara,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jon McCracken,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Michael McGovern,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA
+Jonathan Tomkinson,NA,NA,NA,NA,78.32571811,8.00E-14,NA,NA,NA,NA,NA

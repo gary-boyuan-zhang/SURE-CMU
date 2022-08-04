@@ -1,0 +1,138 @@
+---
+title: "Methodology"
+author: "Gary Zhang"
+date: "2022/7/28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **III. Methodology**
+
+
+**1. Prior Rating Model**
+
+In order to create prior ratings for the players, box-score player-level statistics are used to estimate player ratings from the video game FIFA. More specifically, player's box score statistics from the 2020-2021 EPL season are used to estimate player ratings from FIFA 22, since these ratings are given right after the 2020-2021 season. A standard multivariate linear regression is used to fit the model. As we have seen in the previous section, the distributions for the FIFA 22 rating is closed to normal, so a linear regression is an appropriate method here.
+
+
+**2. RAPM Model**
+
+
+After constructing an individual rating from the previous section, our next consideration is to implement these results into the RAPM Model. Dr. Kostas Pelechrinis, our mentor for this project, suggests using Ridge Regression as the RAPM framework, but instead of shrinking the coefficients towards zero, we make several adjustments to have the coefficients shrink towards his priors ratings. Specifically, here is the formula to determine the coefficient of this linear regression:
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X)^{-1}(X^{T}y)
+\end{equation}
+```
+In the above equation,
+
+
+$\theta$: hypothesis parameters that define it the best.
+
+
+$X$: Input feature value of each instance.
+
+
+$y$: Output value of each instance.
+
+
+The idea of having a regularized term in the above formula, or using Ridge Regression, is suitable for the task of interpreting a player's contribution to his team. Since we are creating a variable or a column for each player in the league, the dimension of the data is huge, which makes itself vulnerable to overfitting. By adding a regularized term into the formula above, we simultaneously constrain the parameters to be relatively small as well as maintain the goal of minimizing mean squared error from the model. We can see the formula for Ridge Regression.
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X + \lambda I)^{-1}(X^{T}y)
+\end{equation}
+```
+
+
+We introduce $\lambda$ as a penalty term and an identity matrix in the Ridge Regression Formula. The discussion of using Ridge or Lasso or their combination (Elastic Net) is also interesting. The goal of this model is to interpret each individual's contribution to the overall team; therefore, using Lasso, i.e allowing the coefficient to be equal to 0, will be likely to ignore the contribution of a player whose rating is average. In order to shrink the coefficient towards the priors, another term will be introduced in the formula:
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X + \lambda I)^{-1}(X^{T}y + I*L)
+\end{equation}
+```
+
+
+
+**3. Implementation**
+
+  ***3.1 Model Training***
+
+The objective function of the Ridge Regression is like this:
+$$
+  \begin{align}
+    \beta^* &= \arg \min_{\beta} ||y - X\beta||_2^2 + \lambda||\beta||_2^2 \\
+    & \Leftrightarrow Ridge(y, X, \lambda)
+  \end{align}
+$$
+
+Now we introduce a prior value $\beta_{prior}$ to each coefficient $\beta$:
+$$
+  \begin{equation}
+    \beta^* = \arg \min_{\beta} ||y - X\beta||_2^2 + \lambda||\beta - \beta_{prior}||_2^2
+  \end{equation}
+$$
+So now we are penalizing coefficient $\beta$ for being far away from its prior $\beta_{prior}$. As a result, $\beta$ will be shrink toward $\beta_{prior}$, instead of $0$.
+
+
+However, in order to tune the parameter $\lambda$ with the existing package for Ridge Regression, let's consider the following manipulation, where we define:
+
+$$
+  \begin{align}
+    & \theta := \beta - \beta_{prior} \\
+    \Leftrightarrow & \beta = \theta + \beta_{prior}
+  \end{align}
+$$
+Now we have:
+$$  
+    \begin{align}
+      \beta^* &= \arg \min_{\beta} ||y - X\beta||_2^2 + \lambda||\theta||_2^2 \\
+      \theta^* &= \arg \min_{\theta} ||y - X\beta_{prior} - X\theta||_2^2 + \lambda||\theta||_2^2 \\
+      &\Leftrightarrow Ridge(y - X\beta_{prior}, X, \lambda)
+    \end{align}
+$$
+
+Thus, we could convert back to get $\beta^*$ by:
+
+$$
+  \begin{align}
+    \beta^* &= \theta^* + \beta_{prior} \\
+    &= Ridge(y - X\beta_{prior}, X, \lambda) + \beta_{prior}
+  \end{align}
+$$
+
+Now, we also want to introduce weights for the time length of each stint, that is we want balance the effect that a longer stint would produce the larger responses, i.e. the longer the stint is more likely to result in a larger difference in expected goals. To control this, we could introduce the time of each stint $t$ in to the model as well. Therefore, our training model eventually become:
+$$
+  \begin{equation}
+    \beta^* = Ridge(y - tX\beta_{prior}, tX, \lambda) + \beta_{prior}
+  \end{equation}
+$$
+
+
+  ***3.2 Model Testing***
+
+After the transformation shown in previous section, the response of the model, predicted expected goal differential, $\hat{y}$ could be obtained by:
+$$
+  \begin{equation}
+    \hat{y} = tX\beta^* = tX\theta^* + tX\beta_{prior}
+  \end{equation}
+$$
+
+Now, we could test our model's prediction accuracy by defining the prediction error as follows:
+$$
+  \begin{align}
+    \textbf{Prediction Error} &= \sqrt{\sum_{\text{stint}} \frac{(\text{predicted xG differential} - \text{actual xG differential})^2}{\text{number of stint}}} \\
+    &= \sqrt{\sum_{\text{stint}} \frac{(\hat{y} - y)^2}{\text{n}}}
+  \end{align}
+$$
+
+
+## The End of R Markdown
+

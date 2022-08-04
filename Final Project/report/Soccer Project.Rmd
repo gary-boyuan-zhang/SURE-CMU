@@ -6,8 +6,10 @@ output:
   html_document
 ---
 
+
 ```{=html}
 <style type="text/css">
+
 
 h1.title {
   font-size: 48px;
@@ -34,31 +36,44 @@ knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message = FALSE)
 ```
 
+
 # **I. Introduction**
+
 
 Soccer, more commonly known as Football, is a family of team sports that includes the involvement of kicking the ball and scoring the ball. Originated in England in 1863, soccer has gradually become the most popular sport in the world due to its simplicity. This beautiful game can be played from anywhere with minimal equipment. With the improvement of the media, we as soccer fans shouldn't be too unfamiliar with the story of famous soccer players who grew up playing barefoot on the street.
 
+
 With its popularity, soccer can be viewed as a large global business in which at the highest level, billions of dollars are invested to compete for championships. This enormous size has attracted numerous media, making the process of evaluating individual players much more appealing and resulting in significant impact on the recruitment decisions and drafting decisions. Analysts and researchers have put up hours to construct a framework that is able to deliver one-number statistics ratings for each player, allowing organizations to quickly evaluate trades, pick up free agents, and predict future matches' results.
+
 
 One of the most well-known frameworks for constructing all-in-one player performance metrics is the plus-minus model, which in the most rudimentary form has been applied in hockey since the 1950s. The plus-minus model considers the number of goals scored minus the number of goals conceded when a given player is in the game. A huge problem with this approach is that it does not control for the impact of teammates or opponents. It is important to acknowledge that every player on the pitch, either directly or indirectly, is contributing to the overall team's performance. Several academic studies have started to utilize linear regression as an adjusted plus-minus (APM) framework to include other players' influence on that individual's rating. APM and its variations have most commonly been seen in basketball and hockey, achieving substantial improvements in these fields, an example being ESPN's widely known real plus-minus (RPM).
 
+
 As a sport, soccer has numerous inherent disadvantages when it comes to APM, especially compared to basketball or hockey. Soccer is a low-scoring game with few substitutions, which means a traditional APM for the sport will have collinearity issues and an infrequent response variable. The collinearity comes from the low number of substitutions since some players will share the same minutes on the court together in almost every segment, which eventually makes them indistinguishable. Out of these three sports, basketball is the best sport to calculate APM for, and whereas hockey is low-scoring, it has an extremely high number of substitutions every game. Several scholars have tried to handle this challenge, considerably the paper from the Department of Statistics at Carnegie Mellon University, which introduces the use of video game ratings from FIFA as a prior in the APM model.
 
-This paper aims to build up on the foundations of calculating individual player ratings using a plus-minus framework. This procedure ensures that the one-number statistics for soccer players accurately represent the individuals' skill level as well as their team contribution by adding the traditional box-score rating into the measurement of the APM model. Our approach also uses expected goals instead of the actual goals as we believe this will better measure the team's performance within a match. The remainder of this paper will be organized as follows. Section 2 describes the dataset that we use. Section 3 goes into detail about different stages of our method. Sections 4 and 5 summarize the results and discuss the project's limitations and propose several next steps for further research. The last section will be the acknowledgments for people that have helped us to publish this work.
+
+This paper aims to build up on the foundations of calculating individual player ratings using a plus-minus framework. This procedure ensures that the one-number statistics for soccer players accurately represent the individuals' skill level as well as their team contribution by adding the traditional box-score rating into the measurement of the APM model. Our approach also uses expected goals instead of the actual goals as we believe this will better measure the team's performance within a match. The remainder of this paper will be organized as follows. Section 2 describes the dataset that we use. Section 3 goes into detail about the different stages of our method. Sections 4 and 5 summarize the results and discuss the project's limitations and propose several next steps for further research. The last section will be the acknowledgments for people that have helped us to publish this work.
+
 
 # **II. Dataset**
 
+
 ## **1. Prior Stages**
 
-In the construction of individuals' ratings, we use two different datasets. First of all, we collected the box-score ratings for each player in the Premier League season 2020-21 and 2021-22 from FBref.com, which is the soccer section of the ["Sports Reference Website"](https://www.sports-reference.com/). This data set contains all the players from five majors League in Europe, with each observations being a player along with over 180 variables describing his information and box-score statistics. The variables that are considered describe different actions in soccer, such as scoring, creating, dribbling, passing and defensive actions. We also consider players from EPL and had at least 900 minutes in the field last season in order to reduces the bias in which players that usually start from bench benefits from the team's results.
 
-The second data set we collected is the FIFA ratings from 2021 on the website ["https://sofifa.com/"](https://sofifa.com/). The website contains different characteristics to measure the players, but we stick with the one-number overall statistics for each player only. We merge these two dataset by players' names, resulting in several missing values as the names are recorded slightly different between two data sources. These missingness are handled by manually matching. Figure 1 shows the distribution of EPL FIFA 2022 ratings.
+In the construction of individuals' ratings, we use two different datasets. First of all, we collected the box-score ratings for each player in the Premier League season 2020-21 and 2021-22 from FBref.com, which is the soccer section of the ["Sports Reference Website"](https://www.sports-reference.com/). This data set contains all the players from five majors League in Europe, with each observation being a player along with over 180 variables describing his information and box-score statistics. The variables that are considered describe different actions in soccer, such as scoring, creating, dribbling, passing and defensive actions. We also consider players from EPL who had at least 900 minutes in the field last season in order to reduce the bias in which players that usually start from the bench benefits from the team's results.
+
+
+The second data set we collected is the FIFA ratings from 2021 on the website ["https://sofifa.com/"](https://sofifa.com/). The website contains different characteristics to measure the players, but we stick with the one-number overall statistics for each player. We merge these two datasets by players' names, resulting in several missing values as the names are recorded slightly differently between the two data sources. This missingness is handled by manually matching. Figure 1 shows the distribution of EPL FIFA 2022 ratings.
+
 
 <center>
 
+
 ```{r}
+library(tidyverse)
 library(ggplot2)
-fifarating <- read.csv("Final Project/data/eng2021_boxscores.csv")
+fifarating <- read_csv("C:/Users/ad/Desktop/CMU/SURE-CMU/Final Project/data/eng2021_boxscores.csv")
 ggplot(data=fifarating, aes(x=overall)) +
     geom_histogram(color="lightblue", fill="steelblue", bins = 15) + 
     labs(title="EPL FIFA Rating Season 2022", x = ("FIFA Rating")) + 
@@ -66,30 +81,97 @@ ggplot(data=fifarating, aes(x=overall)) +
 axis.title.x = element_text(color="black", size=12, face="bold"),
 axis.title.y = element_text(color="black", size=12, face="bold"))
 ```
+
+
 </center>
 
-The distribution is the frequency of the FIFA Rating among players, whereas the x-axis represents the ratings, and the y-axis is the frequency. The histogram is close to a normal distribution, in which a great proportion of the observations is in the range from 72 to 83.
 
-## **2. Modeling Stages**
+The distribution is the frequency of the FIFA Rating among players, whereas the x-axis represents the ratings, and the y-axis is the frequency. The histogram is close to a normal distribution, in which a great proportion of the observations is in the range of 72 to 83.
 
-In this stage, with the purpose of getting the expected goals for each stint, we also have two different dataset. In order to create the stint dataset, we collected the match summary and line-up information for every match in the 2021-2022 English Premier League season. We then defined each separated segment as there is a change in the scoreboard or in the lineup from either team. Therefore, a new stint will begin when there is an event of a substitution, red card, or scoring a goal. This dataset contains almost 4000 stints across 380 matches, which makes a match has an average of over 10 stints. The following plots describes the distribution of number of stints per match in the EPL 2021-22.
+
+## **2. Modeling (RAPM) Stages**
+
+
+In this stage, with the purpose of getting the expected goals for each stint, we also have two different datasets. In order to create the stint dataset, we collected the match summary and line-up information for every match in the 2021-2022 English Premier League season. The dataset created for the purpose of RAPM consists of "stints" as rows and indicator columns for each player, as well as some other columns to adjust for red cards and game state. The response variable is (expected) goal difference per 90 mins. A stint is defined as a period of time within a match in which there are no substitutions and no goals scored. A new stint is generated whenever there is a substitution since the players on the field change, and whenever there is a goal since the game state changes. Using this setup, a single player's individual impact on their team's (expected) goal difference per 90 minutes can be estimated with ridge regression, with the length of the stints as weights. This dataset contains almost 4000 stints across 380 matches, which makes a match has an average of over 10 stints. The following plots describe the distribution of number of stints per match in the EPL 2021-22.
+
 
 <center>
+
 
 ```{r}
 library(ggplot2)
 library(dplyr)
-xG_df <- read.csv("eng1_2122_singleapm_stint_eg (1).csv")
-xG_df <- xG_df %>% group_by(matchID) %>% dplyr::summarise(count(Gender))
-ggplot(data=xG_df, aes(x=freq)) +
+xG_df <- read.csv("C:/Users/ad/Desktop/CMU/SURE-CMU/Final Project/data/eng1_2122_singleapm_stint_eg.csv")
+xG_df <- xG_df %>% dplyr::count(matchID)
+ggplot(data=xG_df, aes(x=n)) +
     geom_histogram(color="lightblue", fill="steelblue", bins = 10) + 
     labs(title="Distribution of Stints Per Game EPL 2021-22", x = ("Number of Stints")) + 
   theme(plot.title = element_text(color="Black", size=12, face="bold", hjust = 0.5),
 axis.title.x = element_text(color="black", size=12, face="bold"),
 axis.title.y = element_text(color="black", size=12, face="bold"))
 ```
+
+
 </center>
 
-As we can see from the distributions, almost 150 matches have 9 or 9 stints, while more than 150 teams have the number of stints ranging from 10 to 14. There are several potential outliers which may be resulted from a no-subtition match or multiple goals are scored from both sides.
 
-The next step in this stage is to have the shooting information match-by-match. Once again, we collect this information on ["Sports Reference Website"](https://www.sports-reference.com/) An observation in this data frame represented a shot made by a player in that game, along with its expected goal. We also consider several important factors from this dataset such as the minute of the shot, player's name, team's name, and many more. 
+As we can see from the distributions, almost 150 matches have 8 or 9 stints, while more than 150 teams have a number of stints ranging from 10 to 14. There are several potential outliers that may be resulted from a no-substitution match or multiple goals are scored from both sides.
+
+
+The next step in this stage is to have the shooting information match-by-match. Once again, we collect this information on ["Sports Reference Website"](https://www.sports-reference.com/) An observation in this data frame represented a shot made by a player in that game, along with its expected goal. We also consider several key factors from this dataset such as the minute of the shot, player's name, team's name, and many more.
+
+
+# **III. Methodology**
+
+
+**1. Prior Rating Model**
+
+In order to create prior ratings for the players, box-score player-level statistics are used to estimate player ratings from the video game FIFA. More specifically, player statistics from the 2020-2021 EPL season are used to estimate player ratings from FIFA 22, since these ratings are given right after the 2020-2021 season. A standard multivariate linear regression is used to fit the model. As we have seen in the previous section, the distributions for the FIFA 22 rating is closed to normal, so a linear regression is an appropriate method here.
+
+
+**2. RAPM Model**
+
+
+After constructing an individual rating from the previous section, our next consideration is to implement these results into the RAPM Model. Dr. Kostas Pelechrinis, our mentor for this project, suggests using Ridge Regression as the RAPM framework, but instead of shrinking the coefficients towards zero, we make several adjustments to have the coefficients shrink towards his priors ratings. Specifically, here is the formula to determine the coefficient of this linear regression:
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X)^{-1}(X^{T}y)
+\end{equation}
+```
+In the above equation,
+
+
+$\theta$: hypothesis parameters that define it the best.
+
+
+$X$: Input feature value of each instance.
+
+
+$y$: Output value of each instance.
+
+
+The idea of having a regularized term in the above formula, or using Ridge Regression, is suitable for the task of interpreting a player's contribution to his team. Since we are creating a variable or a column for each player in the league, the dimension of the data is huge, which makes itself vulnerable to overfitting. By adding a regularized term into the formula above, we simultaneously constrain the parameters to be relatively small as well as maintain the goal of minimizing mean squared error from the model. We can see the formula for Ridge Regression.
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X + \lambda I)^{-1}(X^{T}y)
+\end{equation}
+```
+
+
+We introduce $\lambda$ as a penalty term and an identity matrix in the Ridge Regression Formula. The discussion of using Ridge or Lasso or their combination (Elastic Net) is also interesting. The goal of this model is to interpret each individual's contribution to the overall team; therefore, using Lasso, i.e allowing the coefficient to be equal to 0, will be likely to ignore the contribution of a player whose rating is average. In order to shrink the coefficient towards the priors, another term will be introduced in the formula:
+
+
+```{=tex}
+\begin{equation}
+\theta = (X^{T}X + \lambda I)^{-1}(X^{T}y + I*L)
+\end{equation}
+```
+
+
+
+
+

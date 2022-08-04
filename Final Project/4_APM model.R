@@ -108,7 +108,7 @@ unscaled_rating <- prior %>%
 
 
 scaled_ridge_fit <- glmnet(train_x, new_train_y_prior_scaled, alpha = 0, weights = t,
-                    lambda = 500, standardize = FALSE)
+                    lambda = 500, standardize = FALSE, intercept = FALSE)
 y_predict <- predict(scaled_ridge_fit, newx = train_x)
 y_hat <- y_predict + (train_x_t %*% new_scaled_prior)
 
@@ -150,6 +150,7 @@ scaled_rating <- prior %>%
 # save data ---------------------------------------------------------------
 
 write_csv(rating, "Final Project/data/eng1_2122_apm_rating.csv")
+write_csv(scaled_rating, "Final Project/data/eng1_2122_singleapm_rating.csv")
 
 
 
@@ -161,6 +162,9 @@ rating %>%
   geom_histogram() +
   theme_bw()
 
+
+
+# final model -------------------------------------------------------------
 
 
 

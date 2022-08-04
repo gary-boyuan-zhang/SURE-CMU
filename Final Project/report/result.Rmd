@@ -1,0 +1,104 @@
+---
+title: "Result"
+author: "Gary Zhang"
+date: "2022/7/28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(gt)
+```
+
+
+# **IV. Results**
+
+This section compares our RAxGPM model against the models listed below: 
+
+  - RAxGPM_only: RAxGPM without any prior
+  - RAxGPM_FIFA: RAxGPM with prior from FIFA rating
+  - RAxGPM_box: RAxGPM with prior created from box score stats
+
+We measure each models ability on making out-of-sample predictions. We use 10 fold cross-validation to iterate through the 2021-2022 season of Premier League. Our accuracy is the measured by the mean of root mean squared error (RMSE) of the predicted expected goal difference per 90 minutes of each observation with the actual expected goal difference per 90 minutes within each fold.
+
+  \plot
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+holdout_predictions <- read_csv("C:/Users/ad/Desktop/CMU/SURE-CMU/Final Project/data/holdout_predictions.csv")
+holdout_predictions %>%
+  rename(RAxGPM_box = ridge_new_pred_preds,
+         RAxGPM_FIFA = ridge_FIFA_preds,
+         RAxGPM_only = ridge_APM_preds) %>%
+  pivot_longer(c(RAxGPM_box, RAxGPM_FIFA, RAxGPM_only),
+               names_to = "model", values_to = "test_preds") %>%
+  group_by(model, test_fold) %>%
+  summarise(RMSE = sqrt(mean((test_actual - test_preds)^2))) %>%
+  ggplot(aes(x = model, y = RMSE)) +
+  geom_point() + theme_bw() +
+  stat_summary(fun = mean, geom = "point", color = "red") + 
+  stat_summary(fun.data = mean_se, geom = "errorbar", color = "red")
+```
+
+
+As shown in the figure above, the RAxGPM model with FIFA rating as prior improves on the RAxGPM model without any prior, which shows that having a prior is indeed adding valuable information to the model. Our RAxGPM model with prior created from box score has the best predictive accuracy, which shows that box score stats are more valuable as a predictor than FIFA rating.
+
+
+
+Moreover, we are also interesting in if our model has more descriptive power on player's evaluation. Regularized Adjusted Plus-Minus models are often validated by an “Intraocular” test, in that, it’s better if the results make intuitive sense to soccer fans.(Matano, 2018) Here, we expect that the box score prior we created are more descriptive on the player's performance within a time period compare to FIFA rating.
+
+  \table
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+prior <- read_csv("C:/Users/ad/Desktop/CMU/SURE-CMU/Final Project/data/prior.csv")
+rating <- read_csv("C:/Users/ad/Desktop/CMU/SURE-CMU/Final Project/data/eng1_2122_singleapm_rating.csv")
+
+
+new_prior <- prior %>%
+  select(Player, total_min, adj_overall, adj_scaled, weighted_pred, pred_scaled) %>%
+  rename(Min = total_min,
+         FIFA = adj_overall,
+         FIFA_scaled = adj_scaled,
+         Box = weighted_pred,
+         Box_scaled = pred_scaled)
+
+FIFA_table <- new_prior %>%
+  select(-Box, -Box_scaled) %>%
+  left_join(select(rating, c(Player, FIFA_coef, FIFA_rating))) %>%
+  arrange(desc(FIFA_rating)) %>%
+  head(20)
+
+box_table <- new_prior %>%
+  select(-FIFA, -FIFA_scaled) %>%
+  left_join(select(rating, c(Player, box_coef, box_rating))) %>%
+  arrange(desc(box_rating)) %>%
+  head(20)
+
+```
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+#library(svglite)
+library(kableExtra)
+
+FIFA_table %>%
+  kable("html", align = 'clc', caption = 'RAxGPM with FIFA prior') %>%
+    kable_styling(full_width = F, position = "float_left")
+ 
+box_table %>%
+  kable("html", align = 'clc', caption = 'RAxGPM with box score prior') %>%
+    kable_styling(full_width = F, position = "right")
+```
+
+
+
+Figure above compares the top 15 players from the box score prior created from 2021-22 season and FIFA rating prior collected at the end of the 2021-22 season. We have also includes the corresponding result in the RAxGPM model.
+As expected, RAxGPM model with FIFA rating prior gives higher value to players with higher FIFA ratings, while RAxGPM model with box score prior gives higher value to players with better box score performance in the season. 
+We also see that Mohamed Salah, the PFA player of the year, ranks first in both RAxGPM models. Kevin De Bruyne, the EPL player of the year, ranks...... 
+
+This is a good sign for the intraocular test.
+
+
+
+## R Markdown

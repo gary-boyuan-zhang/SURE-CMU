@@ -1,0 +1,39 @@
+---
+title: "Discussion"
+author: "Gary Zhang"
+date: "2022/7/28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **V. Discussion**
+
+Our project introduces a new kind of Regularized Adjusted Expected Goal Plus-Minus model in soccer to evaluate player's performance, which we incorporates priors generating from box score data into a regularized linear regression framework. We've also decides to use expected goals differential per 90s as the response variable in order to increase the predictability of our model.
+
+Unlike previous works have done where Bayesian framework are employed, our model is only performing a point estimation on the response variable through regularized linear model with a prior, which does not requires any assumption on the prior distribution.
+
+We have also shown that the RAxGPM model with the prior we created from box score data has better out-of-sample prediction accuracy than the RAxGPM model with FIFA rating as prior, and without any prior, which proves that by incorporating box score data, we are indeed adding more valuable information to our model.  
+
+
+However, there are still many directions for future work, and we believe that it takes time to fully develop and employ Plus-Minus model in general in soccer. Some of the possible future development could be:
+
+  - adding more data, increasing sample size to enhance models traning and prediction accuracy
+  - employing more supervised learning technique to increase prior model quality
+  - bagging to improve the stability and the accuracy of RAxGPM model
+  - choice of response variable: could we find a better measurement for soccer?
+  - implementing tracking data to build a more comprehensive model
+  - constructing Bayesian framework to add uncertainty to the model through distribution
+
+Some of the potential application of the model could be:
+
+  - evaluating players across different leagues
+  - predicting player's market value and salary
+  - optimal line up recommendation
+  - predicting game result and simulating league result
+
+
+## R Markdown
+

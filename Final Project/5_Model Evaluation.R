@@ -119,16 +119,20 @@ holdout_predictions <-
             intercept_model <- mean(train_y)
             ridge_new_pred_model <- glmnet(train_x, train_y_ridge_pred_new, 
                                            alpha = 0, weights = train_t,
-                                           lambda = 500, standardize = FALSE)
+                                           lambda = 800, standardize = FALSE,
+                                           intercept = FALSE)
             ridge_pred_model <- glmnet(train_x, train_y_ridge_pred, 
                                        alpha = 0, weights = train_t,
-                                       lambda = 500, standardize = FALSE)
+                                       lambda = 800, standardize = FALSE,
+                                       intercept = FALSE)
             ridge_FIFA_model <- glmnet(train_x, train_y_ridge_FIFA, 
                                        alpha = 0, weights = train_t,
-                                       lambda = 500, standardize = FALSE)
+                                       lambda = 800, standardize = FALSE,
+                                       intercept = FALSE)
             ridge_APM_model <- glmnet(train_x, train_y, 
                                       alpha = 0, weights = train_t,
-                                      lambda = 0.5, standardize = FALSE)
+                                      lambda = 0.5, standardize = FALSE,
+                                      intercept = FALSE)
             
             # test/predict models
             ridge_new_pred_preds <- predict(ridge_new_pred_model, newx = test_x) + (test_x_t %*% new_pred_prior)
@@ -137,8 +141,8 @@ holdout_predictions <-
             
             
             # return tibble of holdout results:
-            tibble(zero_preds = matrix(0, length(test_y), 1),
-                   intercept_preds = matrix(intercept_model, length(test_y), 1),
+            tibble(zero_preds = as.numeric(matrix(0, length(test_y), 1)),
+                   intercept_preds = as.numeric(matrix(intercept_model, length(test_y)), 1),
                    ridge_new_pred_preds = as.numeric(ridge_new_pred_preds),
                    ridge_pred_preds = as.numeric(ridge_pred_preds),
                    ridge_FIFA_preds = as.numeric(ridge_FIFA_preds),
@@ -189,3 +193,47 @@ holdout_predictions %>%
   stat_summary(fun.data = mean_se, geom = "errorbar", color = "red")
 
 
+# plot --------------------------------------------------------------------
+
+holdout_predictions %>%
+  ggplot(aes(x = test_actual)) +
+  geom_histogram() +
+  theme_bw()
+
+holdout_predictions %>%
+  rename(zero = zero_preds,
+         intercept = intercept_preds,
+         RAxGPM_link = ridge_new_pred_preds,
+         RAxGPM_int = ridge_pred_preds,
+         RAxGPM_FIFA = ridge_FIFA_preds,
+         RAxGPM_only = ridge_APM_preds) %>%
+  pivot_longer(zero : RAxGPM_only,
+               names_to = "model", values_to = "test_preds") %>%
+  ggplot(aes(x = test_preds)) +
+  geom_histogram() +
+  facet_wrap(~ model, ncol = 3) +
+  theme_bw()
+
+holdout_predictions %>%
+  rename(zero = zero_preds,
+         intercept = intercept_preds,
+         RAxGPM_link = ridge_new_pred_preds,
+         RAxGPM_int = ridge_pred_preds,
+         RAxGPM_FIFA = ridge_FIFA_preds,
+         RAxGPM_only = ridge_APM_preds) %>%
+  pivot_longer(zero : RAxGPM_only,
+               names_to = "model", values_to = "test_preds") %>%
+  ggplot(aes(x = test_preds, y = test_actual)) + 
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, 
+              linetype = "dashed", color = "red") +
+  facet_wrap(~ model, ncol = 3) +
+  theme_bw()
+
+
+# save data ---------------------------------------------------------------
+
+holdout_predictions <- as.tibble(holdout_predictions)
+write_csv(holdout_predictions, "Final Project/data/holdout_predictions.csv")
+
+write_csv(prior, "Final Project/data/prior.csv")
